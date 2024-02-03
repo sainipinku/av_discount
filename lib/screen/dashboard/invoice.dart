@@ -11,6 +11,7 @@ class Invoice extends StatefulWidget {
 class _InvoiceState extends State<Invoice> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    
+    return const Text('invoice');
   }
 }
