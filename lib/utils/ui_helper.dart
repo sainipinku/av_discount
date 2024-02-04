@@ -223,6 +223,7 @@ circularNetworkImage(String imgUrl) {
 
 mainBtn({
   required String text,
+  required String enble,
   required VoidCallback onTap,
   double? height,
   double? width,
@@ -237,8 +238,8 @@ mainBtn({
       alignment: Alignment.center,
       margin: EdgeInsets.symmetric(vertical: 10),
       decoration : BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: MyAppTheme.blackLightColor
+        borderRadius: BorderRadius.circular(10),
+        color: enble.isNotEmpty ? MyAppTheme.btnColor : MyAppTheme.btnDisColor
       ),
       child: (icon != null) ?
           Row(

@@ -10,51 +10,25 @@ import '../ui_helper.dart';
 
 
 
-// Widget phoneTextField ( {required TextEditingController controller , String? svgIcon, EdgeInsets? scrollPadding}) {
-//   return TextFormField(
-//
-//       //style: MyStyles.black18TextLight,
-//       scrollPadding: (scrollPadding == null) ? EdgeInsets.zero : scrollPadding,
-//       controller: controller,
-//       keyboardType: TextInputType.number,
-//       validator: (phone) {
-//         if(phone!.isEmpty){
-//           return 'Please enter a phone number';
-//         }else{
-//           return null;
-//         }
-//       },
-//       decoration: InputDecoration(
-//         prefixIcon:  Padding(
-//           padding: EdgeInsets.all(8),
-//           child: SvgPicture.asset(MyIcons.phoneIc,height: 20,width: 20,),
-//         ) ,
-//         // contentPadding: const EdgeInsets.all(12),
-//         hintText: enterPhoneNumber,
-//         enabledBorder: OutlineInputBorder(
-//             borderSide: BorderSide(
-//                 color: MyAppTheme.hintTextColor),
-//             borderRadius: BorderRadius.all(
-//                 Radius.circular(11))),
-//         //hintStyle: ,
-//         errorBorder: OutlineInputBorder(
-//             borderSide: BorderSide(
-//                 color: MyAppTheme.errorColor),
-//             borderRadius: BorderRadius.all(
-//                 Radius.circular(11))
-//         ),
-//         focusedErrorBorder: OutlineInputBorder(
-//             borderSide: BorderSide(
-//                 color: MyAppTheme.errorColor),
-//             borderRadius:  BorderRadius.all(
-//                 Radius.circular(11))
-//         ),
-//         focusedBorder: OutlineInputBorder(
-//             borderSide: BorderSide(
-//                 color: MyAppTheme.hintTextColor),
-//             borderRadius: BorderRadius.circular(11)),
-//       ));
-// }
+Widget phoneTextField ( {required TextEditingController controller ,EdgeInsets? scrollPadding}) {
+  return TextFormField(
+
+      //style: MyStyles.black18TextLight,
+      scrollPadding: (scrollPadding == null) ? EdgeInsets.zero : scrollPadding,
+      controller: controller,
+      keyboardType: TextInputType.number,
+      validator: (phone) {
+        if(phone!.isEmpty){
+          return 'Please enter a phone number';
+        }else{
+          return null;
+        }
+      },
+      decoration: InputDecoration(
+         hintText: 'MOBILE NUMBER'
+      ),
+  );
+}
 
 Widget emailTextField ( {required TextEditingController controller , String? svgIcon, EdgeInsets? scrollPadding}) {
   return TextFormField(

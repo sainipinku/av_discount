@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../auth/signin.dart';
 
@@ -21,8 +22,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(color: Colors.red,height: 50,width: 50,),
+      //backgroundColor: Colors.white,
+      body: Center
+        (child: Image.asset("assets/images/splash.png"),
       ),
     );
   }

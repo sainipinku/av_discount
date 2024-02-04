@@ -17,16 +17,11 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  bool isCheck = false;
   late double height;
   late double width;
-
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
-  TextEditingController passController = TextEditingController();
   TextEditingController mobileController = TextEditingController();
-  TextEditingController confirmPassController = TextEditingController();
-  TextEditingController sponsorIdController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +51,7 @@ class _SignUpState extends State<SignUp> {
                   children: [
                     mainBtn(text: 'Check User Exist',
                         width: width*.5,
-                        onTap: (){}),
+                        onTap: (){}, enble: ''),
                   ],
                 ),
                 
@@ -78,34 +73,9 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 6,),
-                customTextField(
-                    hintText: "Enter Your Full Name",
-                    controller: sponsorIdController,prefixIcon: Icon(Icons.person,color: MyAppTheme.blackColor,)),
-                const SizedBox(height: 6,),
-                customTextField(
-                    hintText: "Enter Your Email",
-                    controller: emailController,prefixIcon: Icon(Icons.email,color: MyAppTheme.blackColor,)),
-                const SizedBox(height: 6,),
-                passwordTextField(
-                    hintText: "Enter Your Password",
-                    controller: passController,prefixIcon: Icon(Icons.lock,color: MyAppTheme.blackColor,)),
-                const SizedBox(height: 6,),
-                passwordTextField(
-                    hintText: "Enter Your Retype Password",
-                    controller: confirmPassController,prefixIcon: Icon(Icons.lock,color: MyAppTheme.blackColor,)),
-
-                Row(
-                  children: [
-                    Checkbox(value: isCheck, onChanged: (value) => setState(() {
-                      isCheck = value!;
-                    }),),
-                    Expanded(child: blackLight12Text('By clicking this for sign up, you are agreed to your Terms & conditions')),
-                  ],
-                ),
                 mainBtn(text: 'Sign Up',
                     width: width*.7,
-                    onTap: (){}),
+                    onTap: (){}, enble: ''),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

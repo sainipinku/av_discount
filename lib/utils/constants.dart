@@ -2,6 +2,7 @@
 const String login = "Login";
 const String signUp = "Sign Up";
 const String signIn = "Sign In";
+const String registerNow = "Register Now";
 const String email = "Email";
 const String password = "Password";
 const String confirmPassword = "Confirm Password";

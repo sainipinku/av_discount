@@ -7,6 +7,10 @@ class MyAppTheme {
   static  Color secondaryBgColor = const Color(0xFFE9F0F9);
   static  Color primaryColor = const Color(0xFF2DE6D6);
   static  Color greenColor = const Color(0xFF00A538);
+  static Color white=const Color(0xFFF6F6F9);
+  static Color gray=const Color(0xFFD9DCE1);
+  static Color btnColor=const Color(0xFF306180);
+  static Color btnDisColor=const Color(0xFFD9DCE1);
   //  Color blackColor = const Color(0xFF000000);
   static  Color blackLightColor = const Color(0xFF000000);
   static  Color greyColor = const Color(0xFFD9D9D9);
@@ -28,7 +32,7 @@ class MyAppTheme {
   static  Color filterCardColor = const Color(0xFF00AA9B);
   static  Color primaryLight = const Color(0xFFA7E1EA);
   static  Color extendedBox = const Color(0xFFD7FAFF);
-
+static Color whitegray = const Color(0xFF000000);
 
 /////////////////////////////////////////////////////////////////
   static  Color gradient1purple = const Color(0xFF011250);

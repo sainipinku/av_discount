@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 
 
@@ -11,7 +13,21 @@ class Invoice extends StatefulWidget {
 class _InvoiceState extends State<Invoice> {
   @override
   Widget build(BuildContext context) {
-    
-    return const Text('invoicetax');
-  }
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+        ),
+        drawer: Drawer(
+        child: ListView(
+        padding: const EdgeInsets.all(0),
+    children: [
+    const DrawerHeader(
+    decoration: BoxDecoration(
+    color: Colors.black,
+    ), child: null,
+    )]
+    ),
+        )
+    );
+  }//BoxDecoration
 }
