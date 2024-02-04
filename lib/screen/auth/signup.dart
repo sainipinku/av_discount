@@ -34,68 +34,58 @@ class _SignUpState extends State<SignUp> {
           height: height,
           width: width,
           padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10).copyWith(top: 20),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                black16Text("Sign Up"),
-                const SizedBox(height: 6,),
-                blackLight12Text("Let's Start To Earn"),
-                const SizedBox(height: 6,),
-                customTextField(
-                    hintText: "Enter Your SponsorId",
-                    controller: nameController,
-                    prefixIcon: Icon(Icons.person,color: MyAppTheme.blackColor,
-                    )),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    mainBtn(text: 'Check User Exist',
-                        width: width*.5,
-                        onTap: (){}, enble: ''),
-                  ],
-                ),
-                
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    InkWell(
-                        onTap: (){},
-                        child: SizedBox(
-                        height: 50,
-                        width: 50,
-                        child: Icon(Icons.arrow_drop_down,size: 35,color: MyAppTheme.blackLightColor,))),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: IconButton(onPressed: () {
 
-                    SizedBox(
-                      width: width*.6,
-                      child: underLineTextField(
-                          hintText: "Enter Your Mobile No",
-                          controller: mobileController),
+                    }, icon: Icon(Icons.arrow_back_ios)),
+                  ),
+                  black20Text("Register to AV Discount"),
+                  SizedBox(height: 10,),
+                  phoneTextField(
+                      controller: mobileController),
+                  SizedBox(height: 10,),
+                  fullNameTextField(
+                    controller: nameController,
+                  ),
+                  SizedBox(height: 10,),
+                  emailTextField(
+                    controller: nameController,
+                  ),
+
+                ],
+              ),
+              Column(
+                children: [
+                  mainBtn(text: 'Register',
+                      onTap: (){}, enble: 'txt'),
+                  RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      style: MyStyles.black14BoldStyle,
+                      children: <TextSpan>[
+                        TextSpan(text: 'By Registering you agree  to',),
+                        TextSpan(
+                            text: 'Terms & condition',
+                            style: MyStyles.red14RegularStyle),
+                        TextSpan(text: 'and ',),
+                        TextSpan(
+                            text: 'privacy policy ',
+                            style: MyStyles.red14RegularStyle),
+                        TextSpan(text: 'of the foodu ',),
+
+                      ],
                     ),
-                  ],
-                ),
-                mainBtn(text: 'Sign Up',
-                    width: width*.7,
-                    onTap: (){}, enble: ''),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    black14Text(alreadyHaveAccount),
-                    const SizedBox(width: 5,),
-                    GestureDetector(
-                        onTap: (){
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignIn(),));
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: Text(
-                            signIn,
-                            style: MyStyles.black16BoldStyle,
-                          ),
-                        ))
-                  ],
-                )
-              ],
-            ),
+                  )
+                ],
+              )
+            ],
           ),
         ),
       ),

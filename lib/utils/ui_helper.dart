@@ -594,6 +594,12 @@ Text black16Text(String text) {
     style: MyStyles.black16BoldStyle,
   );
 }
+Text black20Text(String text) {
+  return Text(
+    text,
+    style: MyStyles.black20BoldStyle,
+  );
+}
 
 Text black14Text(String text) {
   return Text(

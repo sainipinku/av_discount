@@ -12,7 +12,6 @@ import '../ui_helper.dart';
 
 Widget phoneTextField ( {required TextEditingController controller ,EdgeInsets? scrollPadding}) {
   return TextFormField(
-
       //style: MyStyles.black18TextLight,
       scrollPadding: (scrollPadding == null) ? EdgeInsets.zero : scrollPadding,
       controller: controller,
@@ -25,14 +24,16 @@ Widget phoneTextField ( {required TextEditingController controller ,EdgeInsets? 
         }
       },
       decoration: InputDecoration(
-         hintText: 'MOBILE NUMBER'
+         hintText: 'MOBILE NUMBER',
+         labelText: 'MOBILE NUMBER',
+          labelStyle: MyStyles.black14BoldStyle
       ),
   );
 }
 
 Widget emailTextField ( {required TextEditingController controller , String? svgIcon, EdgeInsets? scrollPadding}) {
   return TextFormField(
-      style: MyStyles.white14lightStyle,
+      style: MyStyles.black14BoldStyle,
       scrollPadding: (scrollPadding == null) ? EdgeInsets.zero : scrollPadding,
       controller: controller,
       validator: (email) {
@@ -49,33 +50,33 @@ Widget emailTextField ( {required TextEditingController controller , String? svg
         prefixIcon: (svgIcon != null) ? svgImage(img: svgIcon) : null,
         // contentPadding: const EdgeInsets.all(12),
         hintText: enterEmailText,
-        hintStyle: MyStyles.hintTextStyle,
-        enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: MyAppTheme.whiteColor),
-            borderRadius: BorderRadius.all(
-                Radius.circular(10))),
-        disabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: MyAppTheme.whiteColor),
-            borderRadius: BorderRadius.all(
-                Radius.circular(10))),
-        errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: MyAppTheme.errorColor),
-            borderRadius: BorderRadius.all(
-                Radius.circular(10))
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: MyAppTheme.errorColor),
-            borderRadius:  BorderRadius.all(
-                Radius.circular(10))
-        ),
-        focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: MyAppTheme.whiteColor),
-            borderRadius: BorderRadius.circular(10)),
+        hintStyle: MyStyles.black14BoldStyle,
+        labelText: 'Enter Email id',
+          labelStyle: MyStyles.black14BoldStyle
+
+      ));
+}
+
+Widget fullNameTextField ( {required TextEditingController controller , String? svgIcon, EdgeInsets? scrollPadding})
+{
+  return TextFormField(
+      style: MyStyles.black14BoldStyle,
+      scrollPadding: (scrollPadding == null) ? EdgeInsets.zero : scrollPadding,
+      controller: controller,
+      validator: (email) {
+        if(email!.isEmpty){
+          return 'Please enter an name';
+        } else{
+          return 'Please enter a valid email';
+        }
+      },
+      decoration: InputDecoration(
+          prefixIcon: (svgIcon != null) ? svgImage(img: svgIcon) : null,
+          // contentPadding: const EdgeInsets.all(12),
+          hintText: enterEmailText,
+          hintStyle: MyStyles.black14BoldStyle,
+          labelText: 'Full Name',
+          labelStyle: MyStyles.black14BoldStyle
 
       ));
 }
