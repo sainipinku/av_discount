@@ -11,6 +11,7 @@ class MyAppTheme {
   static Color gray=const Color(0xFFD9DCE1);
   static Color btnColor=const Color(0xFF306180);
   static Color btnDisColor=const Color(0xFFD9DCE1);
+  static Color lightblue=const Color(0xFF306180);
   //  Color blackColor = const Color(0xFF000000);
   static  Color blackLightColor = const Color(0xFF000000);
   static  Color greyColor = const Color(0xFFD9D9D9);

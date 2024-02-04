@@ -3,6 +3,7 @@ import 'package:av_discount_app/screen/auth/signin.dart';
 import 'package:av_discount_app/utils/helpers/textfields.dart';
 import 'package:av_discount_app/utils/my_app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:pinput/pinput.dart';
 
 import '../../utils/constants.dart';
 import '../../utils/my_styles.dart';
@@ -17,85 +18,97 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  late double height;
-  late double width;
-  TextEditingController nameController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController mobileController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
-    width = MediaQuery.sizeOf(context).width;
-    height = MediaQuery.sizeOf(context).height;
     return Scaffold(
-      body: SafeArea(
-        child: Container(
-          color: MyAppTheme.whiteColor,
-          height: height,
-          width: width,
-          padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10).copyWith(top: 20),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                black16Text("Sign Up"),
-                const SizedBox(height: 6,),
-                blackLight12Text("Let's Start To Earn"),
-                const SizedBox(height: 6,),
-                customTextField(
-                    hintText: "Enter Your SponsorId",
-                    controller: nameController,
-                    prefixIcon: Icon(Icons.person,color: MyAppTheme.blackColor,
-                    )),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    mainBtn(text: 'Check User Exist',
-                        width: width*.5,
-                        onTap: (){}, enble: ''),
-                  ],
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_ios_rounded,
+            color: Colors.black,
+          ),
+        ),
+        elevation: 0,
+      ),
+      body: Container(
+        margin: EdgeInsets.only(left: 25, right: 25),
+        alignment: Alignment.center,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/img1.png',
+                width: 150,
+                height: 150,
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Text(
+                "",
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                "We need to register your phone without getting started!",
+                style: TextStyle(
+                  fontSize: 16,
                 ),
-                
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    InkWell(
-                        onTap: (){},
-                        child: SizedBox(
-                        height: 50,
-                        width: 50,
-                        child: Icon(Icons.arrow_drop_down,size: 35,color: MyAppTheme.blackLightColor,))),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Pinput(
+                length: 4,
+                // defaultPinTheme: defaultPinTheme,
+                // focusedPinTheme: focusedPinTheme,
+                // submittedPinTheme: submittedPinTheme,
 
-                    SizedBox(
-                      width: width*.6,
-                      child: underLineTextField(
-                          hintText: "Enter Your Mobile No",
-                          controller: mobileController),
-                    ),
-                  ],
-                ),
-                mainBtn(text: 'Sign Up',
-                    width: width*.7,
-                    onTap: (){}, enble: ''),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    black14Text(alreadyHaveAccount),
-                    const SizedBox(width: 5,),
-                    GestureDetector(
-                        onTap: (){
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignIn(),));
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: Text(
-                            signIn,
-                            style: MyStyles.black16BoldStyle,
-                          ),
-                        ))
-                  ],
-                )
-              ],
-            ),
+                showCursor: true,
+                onCompleted: (pin) => print(pin),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                width: double.infinity,
+                height: 45,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.green.shade600,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10))),
+                    onPressed: () {},
+                    child: Text("Verify Phone Number")),
+              ),
+              Row(
+                children: [
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          'phone',
+                              (route) => false,
+                        );
+                      },
+                      child: Text(
+                        "Edit Phone Number ?",
+                        style: TextStyle(color: Colors.black),
+                      ))
+                ],
+              )
+            ],
           ),
         ),
       ),
