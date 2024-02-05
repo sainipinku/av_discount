@@ -78,7 +78,7 @@ class _SignUpState extends State<SignUp> {
                         TextSpan(
                             text: 'privacy policy ',
                             style: MyStyles.red14RegularStyle),
-                        TextSpan(text: 'of the foodu ',),
+                        TextSpan(text: 'of the av discount ',),
 
                       ],
                     ),

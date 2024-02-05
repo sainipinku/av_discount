@@ -9,8 +9,10 @@ class MyAppTheme {
   static  Color greenColor = const Color(0xFF00A538);
   static Color white=const Color(0xFFF6F6F9);
   static Color gray=const Color(0xFFD9DCE1);
+  static Color selecttxt =const Color(0xFF00F2F2);
   static Color btnColor=const Color(0xFF306180);
   static Color btnDisColor=const Color(0xFFD9DCE1);
+  static Color lightblue=const Color(0xFF306180);
   //  Color blackColor = const Color(0xFF000000);
   static  Color blackLightColor = const Color(0xFF000000);
   static  Color greyColor = const Color(0xFFD9D9D9);

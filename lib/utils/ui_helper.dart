@@ -600,6 +600,12 @@ Text black20Text(String text) {
     style: MyStyles.black20BoldStyle,
   );
 }
+Text black30Text(String text) {
+  return Text(
+    text,
+    style: MyStyles.black30BoldStyle,
+  );
+}
 
 Text black14Text(String text) {
   return Text(

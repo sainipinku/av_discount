@@ -1,4 +1,5 @@
 
+import 'package:av_discount_app/screen/auth/otp.dart';
 import 'package:av_discount_app/screen/auth/signup.dart';
 import 'package:av_discount_app/utils/helpers/textfields.dart';
 import 'package:av_discount_app/utils/my_app_theme.dart';
@@ -60,7 +61,9 @@ class _SignInState extends State<SignIn> {
                       phoneTextField(
                           controller: phoneController),
                       mainBtn(text: 'Send Otp',
-                          onTap: (){}, enble: phoneController.text),
+                          onTap: (){
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Otp(),));
+                          }, enble: phoneController.text),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

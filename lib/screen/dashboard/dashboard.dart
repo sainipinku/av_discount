@@ -1,4 +1,8 @@
 
+import 'package:av_discount_app/screen/dashboard/invoice.dart';
+import 'package:av_discount_app/screen/dashboard/profile.dart';
+import 'package:av_discount_app/screen/dashboard/vernders.dart';
+import 'package:av_discount_app/utils/my_app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'home.dart';
@@ -16,9 +20,9 @@ class _DashBoardState extends State<DashBoard> {
   int selectedIndex = 0;
   List<Widget> screens = [
     Home(),
-    Home(),
-    Home(),
-    Home(),
+    Vernders(),
+    Invoice(),
+    Profile(),
   ];
   void _onItemTapped(int index) {
     setState(() {
@@ -50,13 +54,13 @@ class _DashBoardState extends State<DashBoard> {
           items: [
             BottomNavigationBarItem(
               icon: selectedIndex == 0 ? SvgPicture.asset(
-                'assets/icons/select_news.svg',
+                'assets/icons/home.svg',
                 allowDrawingOutsideViewBox: true,
                 height: 20,
                 width: 20,
-                color: Colors.black45,
+                color: MyAppTheme.selecttxt,
               ): SvgPicture.asset(
-                'assets/icons/unselect_news.svg',
+                'assets/icons/home.svg',
                 allowDrawingOutsideViewBox: true,
                 height: 20,
                 width: 20,
@@ -67,47 +71,47 @@ class _DashBoardState extends State<DashBoard> {
             BottomNavigationBarItem(
               icon: selectedIndex == 1
                   ?  SvgPicture.asset(
-                'assets/icons/select_news.svg',
+                'assets/icons/profile.svg',
                 allowDrawingOutsideViewBox: true,
                 height: 20,
                 width: 20,
-                color: Colors.black45,
+                color: MyAppTheme.selecttxt,
               ) : SvgPicture.asset(
-                'assets/icons/unselect_news.svg',
+                'assets/icons/profile.svg',
                 allowDrawingOutsideViewBox: true,
                 height: 20,
                 width: 20,
                 color: Colors.white,
               ),
-              label: 'Team',
+              label: 'Venders',
             ),
             BottomNavigationBarItem(
               icon: selectedIndex == 2
                   ?  SvgPicture.asset(
-                'assets/icons/select_news.svg',
+                'assets/icons/invoice.svg',
                 allowDrawingOutsideViewBox: true,
                 height: 20,
                 width: 20,
-                color: Colors.black45,
+                color: MyAppTheme.selecttxt,
               ): SvgPicture.asset(
-                'assets/icons/unselect_news.svg',
+                'assets/icons/invoice.svg',
                 allowDrawingOutsideViewBox: true,
                 height: 20,
                 width: 20,
                 color: Colors.white,
               ),
-              label: 'Report',
+              label: 'Invoice',
             ),
             BottomNavigationBarItem(
               icon: selectedIndex == 3
                   ?  SvgPicture.asset(
-                'assets/icons/select_news.svg',
+                'assets/icons/profile.svg',
                 allowDrawingOutsideViewBox: true,
                 height: 20,
                 width: 20,
-                color: Colors.black45,
+                color: MyAppTheme.selecttxt,
               ): SvgPicture.asset(
-                'assets/icons/unselect_news.svg',
+                'assets/icons/profile.svg',
                 allowDrawingOutsideViewBox: true,
                 height: 20,
                 width: 20,
@@ -119,12 +123,12 @@ class _DashBoardState extends State<DashBoard> {
 
           ],
           currentIndex: selectedIndex,
-          backgroundColor: Colors.blue,
-          selectedLabelStyle: const TextStyle(
+          backgroundColor: MyAppTheme.btnColor,
+          selectedLabelStyle:  TextStyle(
             fontWeight: FontWeight.w400,
             height: 1.5,
             fontSize: 13,
-            color: Colors.black45,
+            color: MyAppTheme.selecttxt,
           ),
           type: BottomNavigationBarType.fixed,
           unselectedLabelStyle: const TextStyle(
@@ -133,7 +137,7 @@ class _DashBoardState extends State<DashBoard> {
             fontSize: 13,
             color: Colors.white,
           ),
-          selectedItemColor: Colors.black45,
+          selectedItemColor: MyAppTheme.selecttxt,
           unselectedItemColor: Colors.white,
           onTap: _onItemTapped,
         ),

@@ -2,14 +2,14 @@ import 'package:av_discount_app/common_ui/globle_ui.dart';
 import 'package:av_discount_app/drawer/drawer_bar.dart';
 import 'package:flutter/material.dart';
 
-class Profile extends StatefulWidget {
-  const Profile({Key? key}) : super(key: key);
+class Vernders extends StatefulWidget {
+  const Vernders({Key? key}) : super(key: key);
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<Vernders> createState() => _VerndersState();
 }
 
-class _ProfileState extends State<Profile> {
+class _VerndersState extends State<Vernders> {
   final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
   @override
   Widget build(BuildContext context) {
@@ -19,11 +19,12 @@ class _ProfileState extends State<Profile> {
       key: _key,
       appBar: customAppBar(context,_key),
       body: Center(
-        child: Text('Profile'),
+        child: Text('Vernders'),
       ),
       drawer: DrawerBar(
         buildContext: context,
       ),
     );
+
   }
 }
