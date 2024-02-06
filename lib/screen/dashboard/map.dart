@@ -1,25 +1,23 @@
-
-
-import 'package:av_discount_app/common_ui/globle_ui.dart';
-import 'package:av_discount_app/drawer/drawer_bar.dart';
+import 'dart:async';
 import 'package:av_discount_app/screen/dashboard/profile.dart';
 import 'package:av_discount_app/screen/dashboard/vernders.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import '../../common_ui/globle_ui.dart';
+import '../../drawer/drawer_bar.dart';
 import '../../utils/my_app_theme.dart';
 import '../../utils/ui_helper.dart';
 import 'home.dart';
-
-
-class Invoice extends StatefulWidget {
-  const Invoice({super.key});
+import 'invoice.dart';
+class Maps extends StatefulWidget {
+  const Maps({super.key});
 
   @override
-  State<Invoice> createState() => _InvoiceState();
+  State<Maps> createState() => _MapState();
 }
 
-class _InvoiceState extends State<Invoice> {
+class _MapState extends State<Maps> {
   int selectedIndex = 0;
   List<Widget> screens = [
     Home(),
@@ -33,32 +31,52 @@ class _InvoiceState extends State<Invoice> {
     });
   }
   int currentIndex = 0;
-  final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
+  Completer<GoogleMapController> _controller = Completer();
+
+  // in the below line, we are specifying our camera position
+  static const CameraPosition _kGoogle = CameraPosition(
+    target: LatLng(37.42796133580664, -122.885749655962),
+    zoom: 14.4746,
+  );
+  final List<Marker> _markers = <Marker>[
+    Marker(
+        markerId: MarkerId('1'),
+        position: LatLng(20.42796133580664, 75.885749655962),
+        infoWindow: InfoWindow(
+          title: 'My Position',
+        )
+    ),
+  ];
+
+  // created method for getting user current location
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
+   // var width = MediaQuery.of(context).size.width;
+   // var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      key: _key,
-      appBar: customAppBar(context,_key),
-    body: SafeArea(
-    child: Container(
-    height: height,
-    width: width,
-    padding: EdgeInsets.symmetric(horizontal: 15),
-    child: SingleChildScrollView(
-    child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    mainAxisAlignment: MainAxisAlignment.start,
-    children: [
-    black30Text("Invoice"),
+       // key: _key,
+      backgroundColor: Color(0xFF0F9D58),
+        appBar: customAppBar(context,_key),
 
-    ],
-
-    ),
-    ),
-    ),
-    ),
+        body: Container(
+          // in the below line, creating google maps.
+          child: GoogleMap(
+            // in the below line, setting camera position
+            initialCameraPosition: _kGoogle,
+            // in the below line, specifying map type.
+            mapType: MapType.normal,
+            // in the below line, setting user location enabled.
+            myLocationEnabled: true,
+            // in the below line, setting compass enabled.
+            compassEnabled: true,
+            // in the below line, specifying controller on map complete.
+            onMapCreated: (GoogleMapController controller){
+              _controller.complete(controller);
+            },
+          ),
+        ),
+      //body: screens[selectedIndex],
       bottomNavigationBar:BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
@@ -151,8 +169,9 @@ class _InvoiceState extends State<Invoice> {
         onTap: _onItemTapped,
       ),
       drawer: DrawerBar(
-        buildContext: context,
-      ),
+      buildContext: context,
+    ),
     );
-  }//BoxDecoration
+
+    }
 }
