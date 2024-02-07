@@ -52,7 +52,7 @@ static Color whitegray = const Color(0xFF000000);
   static  Color containerBgColor = const Color(0xFF23306E);
   static  Color audioGradient1 = const Color(0xFF634C85);
   static  Color audioGradient2 = const Color(0xFF4D3169);
-  static  Color redBtnColor = const Color(0xFFBC2C51);
+  static  Color redBtnColor = const Color(0xFFFF4040);
 
 
 
