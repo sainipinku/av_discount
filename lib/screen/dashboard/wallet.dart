@@ -1,23 +1,24 @@
-import 'package:av_discount_app/common_ui/globle_ui.dart';
-import 'package:av_discount_app/drawer/drawer_bar.dart';
+import 'package:av_discount_app/screen/dashboard/profile.dart';
 import 'package:av_discount_app/screen/dashboard/vernders.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../common_ui/globle_ui.dart';
+import '../../drawer/drawer_bar.dart';
 import '../../utils/my_app_theme.dart';
 import '../../utils/ui_helper.dart';
 import 'home.dart';
 import 'invoice.dart';
-
-class Profile extends StatefulWidget {
-  const Profile({Key? key}) : super(key: key);
+class Wallet extends StatefulWidget {
+  const Wallet({super.key});
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<Wallet> createState() => _WalletState();
 }
 
-class _ProfileState extends State<Profile> {
+class _WalletState extends State<Wallet> {
+  final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
+
   int selectedIndex = 0;
   List<Widget> screens = [
     Home(),
@@ -30,8 +31,6 @@ class _ProfileState extends State<Profile> {
       selectedIndex = index;
     });
   }
-  int currentIndex = 0;
-  final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -39,40 +38,64 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       key: _key,
       appBar: customAppBar(context,_key),
-    //body: SafeArea(
-    //child: Container(
-   // height: height,
-    //width: width,
-    //padding: EdgeInsets.symmetric(horizontal: 15),
-    //child: SingleChildScrollView(
-    //child: Column(
-     // children: [black30Text("Profile")],
-      body: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          children: [
-            const SizedBox(height: 40),
-            CircleAvatar(
-              radius: 70,
-              backgroundImage: AssetImage('assets/images/user.jpg'),
+      body: SafeArea(
+        child: Container(
+          height: height,
+          width: width,
+          padding: EdgeInsets.symmetric(horizontal: 15),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                black30Text("Wallet"),
+                Container(
+                  width: 400,
+                  height: 180,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/Wallet.png",),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+
+              Container(
+                margin: EdgeInsets.all(18.0),
+                padding: EdgeInsets.all(10.0),
+                decoration:BoxDecoration(
+                    borderRadius:BorderRadius.circular(8),
+                    color:Colors.grey
+                ),
+                child: Text("Poojara Fashion",style: TextStyle(color:Colors.black,fontSize:15),),
+              ),
+              Container(
+                margin: EdgeInsets.all(18.0),
+                padding: EdgeInsets.all(10.0),
+                decoration:BoxDecoration(
+                    borderRadius:BorderRadius.circular(8),
+                    color:Colors.grey
+                ),
+                child: Text("Poojara Fashion",style: TextStyle(color:Colors.black,fontSize:15),),
+              ),
+              Container(
+                margin: EdgeInsets.all(18.0),
+                padding: EdgeInsets.all(10.0),
+                decoration:BoxDecoration(
+                    borderRadius:BorderRadius.circular(8),
+                    color:Colors.grey
+                ),
+                child: Text("Poojara Fashion",style: TextStyle(color:Colors.black,fontSize:15),),
+
+          ),
+
+              ],
             ),
-            Text('Jonas Macroni',textAlign: TextAlign.center,),
-            const SizedBox(height: 8),
-            itemProfile( 'Contact Info',Icon(CupertinoIcons.profile_circled)),
-            const SizedBox(height: 8),
-            itemProfile('Wallet', Icon(Icons.wallet)),
-            const SizedBox(height: 8),
-            itemProfile('Invoice',Icon(CupertinoIcons.increase_indent)),
-            const SizedBox(height: 8),
-            itemProfile('Transaction History', Icon(Icons.transfer_within_a_station) ),
-            const SizedBox(height: 8),
-            itemProfile('Notification', Icon(Icons.notification_add_rounded)),
-            const SizedBox(height: 8,),
-            SizedBox(
-            )
-          ],
+          ),
         ),
       ),
+
+
       bottomNavigationBar:BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
@@ -164,27 +187,8 @@ class _ProfileState extends State<Profile> {
         unselectedItemColor: Colors.white,
         onTap: _onItemTapped,
       ),
-    );
-  }
-
-  itemProfile(String title, Icon iconData) {
-    return Container(
-      decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-                offset: Offset(0, 5),
-                color: Colors.deepOrange.withOpacity(.2),
-                spreadRadius: 2,
-                blurRadius: 10
-            )
-          ]
-      ),
-      child: ListTile(
-        title: Text(title),
-        trailing: Icon(Icons.arrow_forward_ios, color: Colors.grey.shade400),
-        tileColor: Colors.white,
+      drawer: DrawerBar(
+        buildContext: context,
       ),
     );
 
