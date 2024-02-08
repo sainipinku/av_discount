@@ -1,5 +1,7 @@
 import 'package:av_discount_app/common_ui/globle_ui.dart';
 import 'package:av_discount_app/drawer/drawer_bar.dart';
+import 'package:av_discount_app/screen/dashboard/profile/transaction_history.dart';
+import 'package:av_discount_app/screen/dashboard/profile/wallet.dart';
 import 'package:av_discount_app/utils/my_app_theme.dart';
 import 'package:av_discount_app/utils/ui_helper.dart';
 import 'package:flutter/material.dart';
@@ -54,9 +56,13 @@ class _ProfileState extends State<Profile> {
             const SizedBox(height: 20,),
 
             CustomRectangle(icon: "assets/icons/wallet.svg", text: "Contact Info"),
-            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Wallet"),
-            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Invoice"),
-            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Transaction History"),
+            CustomRectangle(onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => WalletScreen(),));
+            },icon: "assets/icons/wallet.svg", text: "Wallet"),
+            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Invoice",),
+            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Transaction History",onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => TransactionHistory(),));
+            }),
             CustomRectangle(icon: "assets/icons/wallet.svg", text: "Notification"),
 
           ],
@@ -77,33 +83,36 @@ class CustomRectangle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
-      margin: const EdgeInsets.symmetric(vertical: 5,),
-      decoration: BoxDecoration(
-        color: MyAppTheme.whiteColor,
-        borderRadius: BorderRadius.circular(4),
-        boxShadow:  [
-          BoxShadow(
-            color: MyAppTheme.greyColor,
-            offset: const Offset(5, 5),
-            blurRadius: 10,
-            spreadRadius: -2,
-          ),
-        ],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              //Icon(Icons.navigate_next),
-              svgImage(img: icon),
-              black16Text(text),
-            ],
-          ),
-          const Icon(Icons.navigate_next)
-        ],
+    return InkWell(
+      onTap: onTap ?? (){},
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+        margin: const EdgeInsets.symmetric(vertical: 5,),
+        decoration: BoxDecoration(
+          color: MyAppTheme.whiteColor,
+          borderRadius: BorderRadius.circular(4),
+          boxShadow:  [
+            BoxShadow(
+              color: MyAppTheme.greyColor,
+              offset: const Offset(5, 5),
+              blurRadius: 10,
+              spreadRadius: -2,
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                //Icon(Icons.navigate_next),
+                svgImage(img: icon),
+                black16Text(text),
+              ],
+            ),
+            const Icon(Icons.navigate_next)
+          ],
+        ),
       ),
     );
   }

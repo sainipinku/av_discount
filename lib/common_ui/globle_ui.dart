@@ -17,7 +17,6 @@ AppBar customAppBar(BuildContext context,GlobalKey<ScaffoldState> key) {
         SvgPicture.asset(
           'assets/icons/logo_white.svg',
           allowDrawingOutsideViewBox: true,
-
         ),
         GestureDetector(
           onTap: () {

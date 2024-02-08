@@ -63,6 +63,7 @@ class MyAppTheme {
   static  Color blackTextColor = const Color(0xFF333333);
   static  Color redColor = const Color(0xFFED0F0F);
   static  Color backgroundClr = const Color(0xFFED0F0F);
+  static  Color blueTextClr = const Color(0xFF007AB6);
 
 
 }

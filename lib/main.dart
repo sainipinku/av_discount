@@ -1,4 +1,4 @@
-import 'package:av_discount_app/screen/dashboard/invoice.dart';
+import 'package:av_discount_app/screen/dashboard/invoice/invoice.dart';
 import 'package:av_discount_app/screen/splash/splash.dart';
 import 'package:flutter/material.dart';
 

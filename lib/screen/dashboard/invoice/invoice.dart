@@ -5,7 +5,7 @@ import 'package:av_discount_app/drawer/drawer_bar.dart';
 import 'package:av_discount_app/utils/ui_helper.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/my_styles.dart';
+import '../../../utils/my_styles.dart';
 
 
 class Invoice extends StatefulWidget {

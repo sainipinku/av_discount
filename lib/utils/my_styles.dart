@@ -128,7 +128,17 @@ class MyStyles {
       fontSize:  12,
       color: MyAppTheme.whiteColor);
 
-  static TextStyle green14BoldStyle =  TextStyle(fontWeight: FontWeight.bold,fontSize: 14,color: MyAppTheme.greenColor);
+  static TextStyle green14BoldStyle =  TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize: 14,
+      color: MyAppTheme.greenColor
+  );
+
+  static TextStyle blue14BoldStyle =  TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize: 14,
+      color: MyAppTheme.blueTextClr
+  );
 
 ///////////////////Personalized////////////////////
 //   static TextStyle storyContentStyle =  TextStyle(
