@@ -7,6 +7,8 @@ import 'package:av_discount_app/utils/ui_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'contact_info.dart';
+
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
 
@@ -55,7 +57,9 @@ class _ProfileState extends State<Profile> {
 
             const SizedBox(height: 20,),
 
-            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Contact Info"),
+            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Contact Info",onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInfo(),));
+            },),
             CustomRectangle(onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => WalletScreen(),));
             },icon: "assets/icons/wallet.svg", text: "Wallet"),
@@ -63,7 +67,7 @@ class _ProfileState extends State<Profile> {
             CustomRectangle(icon: "assets/icons/wallet.svg", text: "Transaction History",onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => TransactionHistory(),));
             }),
-            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Notification"),
+            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Notification",),
 
           ],
         ),
