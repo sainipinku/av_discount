@@ -1,7 +1,8 @@
 
 import 'package:av_discount_app/screen/dashboard/invoice.dart';
-import 'package:av_discount_app/screen/dashboard/profile.dart';
-import 'package:av_discount_app/screen/dashboard/vernders.dart';
+import 'package:av_discount_app/screen/dashboard/profile/profile.dart';
+import 'package:av_discount_app/screen/dashboard/vendors/vendor_profile.dart';
+import 'package:av_discount_app/screen/dashboard/vendors/vendors_screen.dart';
 import 'package:av_discount_app/utils/my_app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -20,7 +21,7 @@ class _DashBoardState extends State<DashBoard> {
   int selectedIndex = 0;
   List<Widget> screens = [
     Home(),
-    Vernders(),
+    Vendors(),
     Invoice(),
     Profile(),
   ];
@@ -32,7 +33,7 @@ class _DashBoardState extends State<DashBoard> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-       onWillPop: () async {
+      onWillPop: () async {
         final timegap = DateTime.now().difference(pre_backpress);
         final cantExit = timegap >= const Duration(seconds: 2);
         pre_backpress = DateTime.now();

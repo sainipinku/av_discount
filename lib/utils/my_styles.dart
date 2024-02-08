@@ -15,7 +15,7 @@ class MyFontWeight {
 class MyStyles {
 
   static TextStyle underLineSubHeading = GoogleFonts.quicksand(
-      fontSize: (1 >= 700)? 8:14,
+      fontSize:  14,
       color: MyAppTheme.whiteColor,
       fontWeight: MyFontWeight.regular,
       decoration: TextDecoration.underline,
@@ -23,13 +23,13 @@ class MyStyles {
 
 
   static TextStyle underLine18Style = GoogleFonts.quicksand(
-      fontSize: (1 >= 700)? 10:18,
+      fontSize:  18,
       color: MyAppTheme.whiteColor,
       fontWeight: MyFontWeight.bold,
       decoration: TextDecoration.underline,
       decorationColor: MyAppTheme.whiteColor);
 
-/// ///////////////White Color /////////////////////
+  /// ///////////////White Color /////////////////////
 
   ///////////////////UnderLine//////////////////////
   /*static TextStyle white16BoldStyle =  GoogleFonts.quicksand(
@@ -39,49 +39,60 @@ class MyStyles {
   ///////////////bold////////////////
   static TextStyle white24boldStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.semiBold,
-      fontSize: (1 >= 700)? 18:24,
+      fontSize:  24,
       color: MyAppTheme.whiteColor);
 
   static TextStyle white22boldStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.semiBold,
-      fontSize: (1 >= 700)? 16:22,
+      fontSize:  22,
       color: MyAppTheme.whiteColor);
 
   static TextStyle white20boldStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.semiBold,
-      fontSize: (1 >= 700)? 14:20,
+      fontSize:  20,
       color: MyAppTheme.whiteColor);
 
   static TextStyle white18boldStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.semiBold,
-      fontSize: (1 >= 700)? 12:18,
+      fontSize:  18,
       color: MyAppTheme.whiteColor);
 
   static TextStyle white16BoldStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.bold,
-      fontSize: (1 >= 700)? 10:16,
+      fontSize:  16,
       color: MyAppTheme.whiteColor);
 
   static TextStyle white14boldStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.semiBold,
-      fontSize: (1 >= 700)? 8:14,
+      fontSize:  14,
       color: MyAppTheme.whiteColor);
 
   static TextStyle white12BoldStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.bold,
-      fontSize: (1 >= 700)? 6:12,
+      fontSize:  12,
       color: MyAppTheme.whiteColor);
+
+  /// Red
+
+  static TextStyle red16regularStyle =  GoogleFonts.quicksand(
+      fontWeight: MyFontWeight.regular,
+      fontSize:  16,
+      color: MyAppTheme.redColor);
+  static TextStyle red22BoldStyle =  GoogleFonts.quicksand(
+      fontWeight: MyFontWeight.bold,
+      fontSize:  22,
+      color: MyAppTheme.redColor);
 
   ///underline
   static TextStyle white14BoldUnderlineStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.bold,
-      fontSize: (1 >= 700)? 8:14,
+      fontSize: 14,
       decoration: TextDecoration.underline,
       color: MyAppTheme.whiteColor);
 
   static TextStyle white16BoldUnderlineStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.bold,
-      fontSize: (1 >= 700)? 10:16,
+      fontSize: 16,
       decoration: TextDecoration.underline,
       color: MyAppTheme.whiteColor);
 
@@ -90,7 +101,7 @@ class MyStyles {
   ////////////////////regular/////////////////////
   static TextStyle white16RegularStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.regular,
-      fontSize: (1 >= 700)? 10:16,
+      fontSize:  16,
       color: MyAppTheme.whiteColor);
 
 
@@ -98,24 +109,26 @@ class MyStyles {
   ////////////////////light////////////////////////
   static TextStyle white16lightStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.light,
-      fontSize: (1 >= 700)? 10:16,
+      fontSize:  16,
       color: MyAppTheme.whiteColor);
 
   static TextStyle white14lightStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.light,
-      fontSize: (1 >= 700)? 8:14,
+      fontSize:  14,
       color: MyAppTheme.whiteColor);
 
 
   static TextStyle hintTextStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.light,
-      fontSize: (1 >= 700)? 8:14,
+      fontSize:  14,
       color: MyAppTheme.hintTextColor);
 
   static TextStyle white12LightStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.light,
-      fontSize: (1 >= 700)? 6:12,
+      fontSize:  12,
       color: MyAppTheme.whiteColor);
+
+  static TextStyle green14BoldStyle =  TextStyle(fontWeight: FontWeight.bold,fontSize: 14,color: MyAppTheme.greenColor);
 
 ///////////////////Personalized////////////////////
 //   static TextStyle storyContentStyle =  TextStyle(
@@ -125,44 +138,45 @@ class MyStyles {
 //       color: MyAppTheme.whiteColor);
 
 
+
   static TextStyle storyContentStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.light,
-      fontSize: (1 >= 700)? 8:14,
+      fontSize:  14,
       letterSpacing: 1.2,
       color: MyAppTheme.whiteColor);
 
   static TextStyle termsText12Style =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.regular,
-      fontSize: (1 >= 700)? 6:12,
+      fontSize:  12,
       letterSpacing: 1.2,
       color: MyAppTheme.lightPurpleTextColor);
 
   static TextStyle termsTextDark12Style =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.regular,
-      fontSize: (1 >= 700)? 6:12,
+      fontSize:  12,
       letterSpacing: 1.2,
       color: MyAppTheme.darkPurpleTextColor);
 
   static TextStyle termsTextDark24Style =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.bold,
-      fontSize: (1 >= 700)? 18:24,
+      fontSize:  24,
       letterSpacing: 1.2,
       color: MyAppTheme.darkPurpleTextColor);
 
   static TextStyle termsText14Style =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.regular,
-      fontSize: (1 >= 700)? 8:14,
+      fontSize: 14,
       letterSpacing: 1.2,
       color: MyAppTheme.lightPurpleTextColor);
 
   static TextStyle green12boldStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.bold,
-      fontSize: (1 >= 700)? 6:12,
+      fontSize:  12,
       color: MyAppTheme.greenColor);
 
   static TextStyle red14RegularStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.bold,
-      fontSize: (1 >= 700)? 8:14,
+      fontSize:  14,
       color: MyAppTheme.redBtnColor);
 
 
@@ -179,6 +193,7 @@ class MyStyles {
       fontWeight: MyFontWeight.regular,
       fontSize: 12,
       color: MyAppTheme.blackTextColor);
+
 
   static TextStyle lightBlack14RegularStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.regular,

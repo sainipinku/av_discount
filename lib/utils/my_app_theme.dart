@@ -30,11 +30,10 @@ class MyAppTheme {
   static  Color purpleColor = const Color(0xFFAB2DE6);
   static  Color darkPinkColor = const Color(0xFFE62D70);
   static  Color errorColor = const Color(0xFFEA4235);
-  static  Color logoutBtnClr = const Color(0xFFED0F0F);
   static  Color filterCardColor = const Color(0xFF00AA9B);
   static  Color primaryLight = const Color(0xFFA7E1EA);
   static  Color extendedBox = const Color(0xFFD7FAFF);
-static Color whitegray = const Color(0xFF000000);
+  static Color whitegray = const Color(0xFF000000);
 
 /////////////////////////////////////////////////////////////////
   static  Color gradient1purple = const Color(0xFF011250);
@@ -62,6 +61,8 @@ static Color whitegray = const Color(0xFF000000);
   static  Color blackColor = const Color(0xFF000000);
   static  Color whiteColor = const Color(0xFFFFFFFF);
   static  Color blackTextColor = const Color(0xFF333333);
+  static  Color redColor = const Color(0xFFED0F0F);
+  static  Color backgroundClr = const Color(0xFFED0F0F);
 
 
 }

@@ -37,12 +37,12 @@ Widget svgMenuImage({double? height, double? width, Color? color}) {
 Widget logoutDialog(BuildContext context) {
   return Dialog(
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(31)
+        borderRadius: BorderRadius.circular(31)
     ),
     child: Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(30),
           gradient: LinearGradient(
               colors: [MyAppTheme.gradient1purple, MyAppTheme.gradient2lightPurple],
               begin: Alignment.topCenter,
@@ -98,21 +98,21 @@ Widget logoutDialog(BuildContext context) {
 
 Widget customElevatedBtnWithWidget(
     {required Widget child,
-    required VoidCallback onTap,
-    double? height,
-    Color? bgColor,
-    Color? borderColor,
-    double? width,}) {
+      required VoidCallback onTap,
+      double? height,
+      Color? bgColor,
+      Color? borderColor,
+      double? width,}) {
   return ElevatedButton(
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
-        elevation: 0,
+          elevation: 0,
           backgroundColor: bgColor ?? Colors.transparent,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(11),
-            side: BorderSide(
-              color: borderColor ?? Colors.transparent
-            )
+              borderRadius: BorderRadius.circular(11),
+              side: BorderSide(
+                  color: borderColor ?? Colors.transparent
+              )
           ),
           fixedSize: Size((width != null) ? width : double.infinity,
               (height != null) ? height : 50)),
@@ -152,13 +152,13 @@ backBtn({
         Navigator.pop(context);
       },
       child: Container(
-        decoration: BoxDecoration(
-          color: MyAppTheme.containerFillingColor,
-          borderRadius: BorderRadius.circular(10)
-        ),
+          decoration: BoxDecoration(
+              color: MyAppTheme.containerFillingColor,
+              borderRadius: BorderRadius.circular(10)
+          ),
           padding: EdgeInsets.all(8),
           child: svgImage(
-              img: MyIcons.backArrowIc,
+            img: MyIcons.backArrowIc,
           )));
 }
 
@@ -202,22 +202,22 @@ circularNetworkImage(String imgUrl) {
     width: 72,
     decoration: const BoxDecoration(shape: BoxShape.circle),
     child: ClipRRect(
-        borderRadius: BorderRadius.circular(36),
-        child: FadeInImage(
-          image: NetworkImage(imgUrl),
-          fit: BoxFit.cover,
-          width: double.infinity,
-          height: 270,
-          placeholder: AssetImage(MyImages.chap1Img),
-          imageErrorBuilder: (context,
-              error, stackTrace) {
-            //debugPrint("image url ${storyDetailModel.data!.storyChapter[selectedPageIndex].imageUrl}");
-            return Image.asset(
-              MyImages.chap1Img,
-              fit: BoxFit.cover,
-            );
-          },
-        ),),
+      borderRadius: BorderRadius.circular(36),
+      child: FadeInImage(
+        image: NetworkImage(imgUrl),
+        fit: BoxFit.cover,
+        width: double.infinity,
+        height: 270,
+        placeholder: AssetImage(MyImages.chap1Img),
+        imageErrorBuilder: (context,
+            error, stackTrace) {
+          //debugPrint("image url ${storyDetailModel.data!.storyChapter[selectedPageIndex].imageUrl}");
+          return Image.asset(
+            MyImages.chap1Img,
+            fit: BoxFit.cover,
+          );
+        },
+      ),),
   );
 }
 
@@ -233,23 +233,55 @@ mainBtn({
     onTap: onTap,
     child: Container(
       //height: height ?? 56,
-      padding: EdgeInsets.symmetric(vertical: (1 >700)?10:18),
+      padding: const EdgeInsets.symmetric(vertical:10),
       width: width ?? double.infinity,
       alignment: Alignment.center,
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       decoration : BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: enble.isNotEmpty ? MyAppTheme.btnColor : MyAppTheme.btnDisColor
+          borderRadius: BorderRadius.circular(10),
+          color: enble.isNotEmpty ? MyAppTheme.btnColor : MyAppTheme.btnDisColor
       ),
       child: (icon != null) ?
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-            white16BoldText(text),
-            SizedBox(width: 5,),
-            icon,
-          ],)
-          :white16BoldText(text),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          white16BoldText(text),
+          const SizedBox(width: 5,),
+          icon,
+        ],)
+          :enble.isNotEmpty ? white16BoldText(text) : black16Text(text),
+    ),
+  );
+}
+
+secondBtn({
+  required String text,
+  required String enble,
+  required VoidCallback onTap,
+  double? height,
+  double? width,
+  Widget? icon,
+}) {
+  return GestureDetector(
+    onTap: onTap,
+    child: Container(
+      //height: height ?? 56,
+      padding: const EdgeInsets.symmetric(vertical:10),
+      width: width ?? double.infinity,
+      alignment: Alignment.center,
+      decoration : BoxDecoration(
+          borderRadius: BorderRadius.circular(18),
+          color: enble.isNotEmpty ? MyAppTheme.btnColor : MyAppTheme.btnDisColor
+      ),
+      child: (icon != null) ?
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          white16BoldText(text),
+          const SizedBox(width: 5,),
+          icon,
+        ],)
+          :enble.isNotEmpty ? white16BoldText(text) : black16Text(text),
     ),
   );
 }
@@ -263,13 +295,13 @@ circularBtn({
       height: height ?? 56,
       width: width ?? 56,
       alignment: Alignment.center,
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: btnGradient(
         borderRadius: BorderRadius.circular((width != null) ? width / 2 : 28),
       ),
       child: svgImage(
-        img: icon,
-        scaleFactor: scaleFactor
+          img: icon,
+          scaleFactor: scaleFactor
       ),
     ),
   );
@@ -452,11 +484,49 @@ subscriptionContainer({
           ),
         ]
             .map((e) => Padding(
-                  padding: EdgeInsets.symmetric(vertical: 2),
-                  child: e,
-                ))
+          padding: EdgeInsets.symmetric(vertical: 2),
+          child: e,
+        ))
             .toList(),
       ));
+}
+
+storePreviewContainer({
+  required String img,
+  required String name,
+  required String location,
+
+}){
+  return Stack(
+    children: [
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Image.asset(img,fit: BoxFit.cover,),
+          black14DarkText(name),
+          Row(
+            children: [
+              const Icon(Icons.location_on_outlined,size: 20),
+              blackLight12Text(location),
+            ],
+          ),
+        ],
+      ),
+      Positioned(
+        top: 10,
+        right: 10,
+        child: Container(
+          padding: const EdgeInsets.all(4),
+          decoration: BoxDecoration(
+              color: MyAppTheme.redColor,
+              shape: BoxShape.circle
+          ),
+          child: white12DarkText("4.3"),
+        ),
+      ),
+    ],
+  );
 }
 
 /////////////////Flutter Toast////////////////////////////
@@ -575,7 +645,20 @@ Text termsText14Text(String text) {
 }
 
 
+/////// Red Text
 
+Text red16RegularText(String text) {
+  return Text(
+    text,
+    style: MyStyles.red16regularStyle,
+  );
+}
+Text red22BoldText(String text) {
+  return Text(
+    text,
+    style: MyStyles.red22BoldStyle,
+  );
+}
 
 ///////////////// Dark Black //////////////////////////
 Text black14DarkText(String text) {
@@ -622,5 +705,11 @@ Text blackLight12Text(String text) {
   return Text(
     text,
     style: MyStyles.lightBlack12RegularStyle,
+  );
+}
+Text blackLight14Text(String text) {
+  return Text(
+    text,
+    style: MyStyles.lightBlack14RegularStyle,
   );
 }
