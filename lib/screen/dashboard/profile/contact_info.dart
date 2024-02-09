@@ -1,3 +1,4 @@
+/*
 import 'package:av_discount_app/common_ui/globle_ui.dart';
 import 'package:av_discount_app/drawer/drawer_bar.dart';
 import 'package:av_discount_app/utils/my_app_theme.dart';
@@ -46,8 +47,8 @@ class _ContactInfoState extends State<ContactInfo> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle
                             ),
-                            child:Image(
-                            image:  AssetImage('assets/images/profile.png'),)
+                            child: Image(
+                            image: AssetImage('assets/images/profile.png'),)
                           ),
                           Align(
                             alignment: Alignment.center,
@@ -122,4 +123,143 @@ class CustomRectangle extends StatelessWidget {
       ),
     );
   }
+}
+*/
+
+
+import 'package:av_discount_app/utils/helpers/textfields.dart';
+import 'package:av_discount_app/utils/my_app_theme.dart';
+import 'package:av_discount_app/utils/my_styles.dart';
+import 'package:av_discount_app/utils/ui_helper.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class ContactInfo extends StatefulWidget {
+  const ContactInfo({super.key});
+
+  @override
+  State<ContactInfo> createState() => _ContactInfoState();
+}
+
+class _ContactInfoState extends State<ContactInfo> {
+  bool isEditable = false;
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController dobController = TextEditingController();
+  final TextEditingController genderController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phNumController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    nameController.text = "Punit";
+    dobController.text = "Punit";
+    emailController.text = "Punit";
+    phNumController.text = "Punit";
+    addressController.text = "Punit";
+    genderController.text ="Male";
+    var height = MediaQuery.sizeOf(context).height;
+    var width = MediaQuery.sizeOf(context).width;
+    return Scaffold(
+      backgroundColor: const Color(0xffF8F8F9),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Stack(
+
+                  children: [
+                    InkWell(
+                        onTap: (){
+                          Navigator.pop(context);
+                        },
+                        child: const Icon(CupertinoIcons.back)),
+                    Align(
+                        alignment: Alignment.center,
+                        child: black16Text('Contact info',))
+                  ],
+                ),
+                const SizedBox(height: 10,),
+                InkWell(
+                  onTap: (){
+
+                  },
+                  child: Container(
+                    height: height*.15,
+                    width: width*.3,
+                    decoration: BoxDecoration(
+                      image: const DecorationImage(
+                        image: AssetImage(
+                          'assets/images/profile.png',
+                        ),
+                        opacity: .6
+                      ),
+                      color: MyAppTheme.greyColor,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(Icons.edit_outlined,color: MyAppTheme.white,),
+                  ),
+                ),
+
+                textField(controller: nameController, title: "name"),
+                textField(controller: dobController, title: "BirthDate"),
+                textField(controller: genderController, title: "Gender"),
+                textField(controller: emailController, title: "Email"),
+                textField(controller: phNumController, title: "Phone Number",changeBtn:false),
+                textField(controller: addressController, title: "Address",changeBtn:false),
+
+              ],
+            ),
+          ),
+        ),
+      ),
+
+    );
+  }
+
+
+textField({
+  required TextEditingController controller,
+  required String title,
+  bool? changeBtn=true
+}){
+  return Container(
+    decoration: BoxDecoration(
+        border: Border(
+            bottom: BorderSide(
+              color: MyAppTheme.blackColor,
+            )
+        )
+    ),
+    child: Row(
+      children: [
+        Expanded(
+          flex: 4,
+          child: noLineTextField(
+            controller: controller,
+            title: title,
+            isEditable: isEditable,
+          ),
+        ),
+        Expanded(
+          flex: (changeBtn == true) ?1 :0,
+          child: (changeBtn == true) ? InkWell(
+              onTap: (){
+                print("Editing");
+                isEditable = true;
+                setState(() {
+                });
+              },
+              child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10,),
+                  child: Text('Change',style: MyStyles.green12BoldStyle,),
+              ),
+          ):const SizedBox.shrink(),
+        )
+      ],
+    ),
+  );
+}
 }

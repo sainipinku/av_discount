@@ -30,7 +30,7 @@ class _InvoiceState extends State<Invoice> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children:
           [
-            black30Text('Invoice',),
+            black34Text('Invoice',),
             ListView.builder(
               shrinkWrap: true,
               itemCount: 5,

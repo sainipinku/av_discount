@@ -528,6 +528,33 @@ storePreviewContainer({
     ],
   );
 }
+priceContainer({
+  required String price
+}){
+  return InkWell(
+    onTap: (){
+
+    },
+    child: Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 4),
+      decoration: BoxDecoration(
+          color: MyAppTheme.blueTextClr,
+          borderRadius: BorderRadius.circular(12)
+      ),
+      child: Row(
+        children: [
+          SvgPicture.asset(
+            "assets/icons/wallet.svg",
+            height: 22,
+            width: 22,
+          ),
+          const SizedBox(width: 5,),
+          white14BoldText(price)
+        ],
+      ),
+    ),
+  );
+}
 
 /////////////////Flutter Toast////////////////////////////
 
@@ -683,10 +710,10 @@ Text black20Text(String text) {
     style: MyStyles.black20BoldStyle,
   );
 }
-Text black30Text(String text) {
+Text black34Text(String text) {
   return Text(
     text,
-    style: MyStyles.black30BoldStyle,
+    style: MyStyles.black34BoldStyle,
   );
 }
 
@@ -704,12 +731,18 @@ Text black14Text(String text) {
 Text blackLight12Text(String text) {
   return Text(
     text,
-    style: MyStyles.lightBlack12RegularStyle,
+    style: MyStyles.black12LightStyle,
   );
 }
 Text blackLight14Text(String text) {
   return Text(
     text,
     style: MyStyles.lightBlack14RegularStyle,
+  );
+}
+Text blackLight16Text(String text) {
+  return Text(
+    text,
+    style: MyStyles.black16LightStyle,
   );
 }

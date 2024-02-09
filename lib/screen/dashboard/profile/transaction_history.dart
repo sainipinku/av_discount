@@ -26,7 +26,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            black30Text("Transaction History"),
+            black34Text("Transaction History"),
             Text(
               "Today, 14 Jan 2023",
               style: MyStyles.blue14BoldStyle,

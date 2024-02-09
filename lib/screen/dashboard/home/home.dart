@@ -7,6 +7,7 @@ import 'package:av_discount_app/utils/my_app_theme.dart';
 import 'package:av_discount_app/utils/my_styles.dart';
 import 'package:av_discount_app/utils/ui_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Home extends StatefulWidget {
@@ -51,7 +52,11 @@ class _HomeState extends State<Home> {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
       key: _key,
-      appBar: customAppBar(context,_key),
+      appBar: customAppBar(
+        context,
+        _key,
+        priceContainer(price: "9856")
+      ),
       body: SafeArea(
         child: Container(
           height: height,
@@ -62,10 +67,10 @@ class _HomeState extends State<Home> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                black30Text("Welcome, Jessie"),
+                black34Text("Welcome, Jessie"),
                 SizedBox(
                     width: width,
-                    height: height * 0.25,
+                    height: height * 0.2,
                     child: Stack(
                       children: [
                         SizedBox(
@@ -86,26 +91,26 @@ class _HomeState extends State<Home> {
 
                                 },
                                 child:  SizedBox(
-                                    height: height * 0.20,
+                                    height: height * 0.15,
                                     width: width,
                                     child: ClipRRect(
-                                      borderRadius:
-                                      BorderRadius.circular(5.0),
+                                      borderRadius: BorderRadius.circular(10),
                                       child: Center(
-                                          child: FadeInImage(
-                                            image: NetworkImage(banner[index]),
-                                            fit: BoxFit.fill,
-                                            width: width,
-                                            height: height * 0.20,
-                                            placeholder: const AssetImage(
-                                                "assets/images/tennis_ball_banner_placeholder.png"),
-                                            imageErrorBuilder:
-                                                (context, error,
-                                                stackTrace) {
-                                              return Image.asset(
-                                                "assets/images/tennis_ball_banner_placeholder.png",
-                                              );
-                                            },
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(10),
+                                            child: FadeInImage(
+                                              image: NetworkImage(banner[index]),
+                                              fit: BoxFit.fill,
+                                              width: width,
+                                              height: height * 0.15,
+                                              placeholder: const AssetImage(
+                                                  "assets/images/tennis_ball_banner_placeholder.png"),
+                                              imageErrorBuilder: (context, error, stackTrace) {
+                                                return Image.asset(
+                                                  "assets/images/tennis_ball_banner_placeholder.png",
+                                                );
+                                              },
+                                            ),
                                           )),
                                     )),
                               );
@@ -122,19 +127,14 @@ class _HomeState extends State<Home> {
                                 controller: _controller,
                                 count: banner.length,
                                 effect:  const ExpandingDotsEffect(
-                                    radius: 8,
+                                    radius: 16,
                                     spacing: 8,
                                     dotHeight: 8,
                                     dotWidth: 8,
                                     dotColor: Colors.black45,
-                                    activeDotColor: Colors.black
+                                    activeDotColor: Colors.black,
                                 )
-                              /* const ScrollingDotsEffect(
-                                                              radius: 8,
-                                                              spacing: 8,
-                                                              dotHeight: 8,
-                                                              dotWidth: 8,
-                                                              activeDotColor: MyAppTheme.MainColor)*/),
+                            ),
                           ),
                         )
                       ],

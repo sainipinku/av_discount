@@ -27,7 +27,7 @@ class _VendorsProfileState extends State<VendorsProfile> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            black30Text('Poojara Fashions'),
+            black34Text('Poojara Fashions'),
             const SizedBox(height: 10,),
 
             Stack(

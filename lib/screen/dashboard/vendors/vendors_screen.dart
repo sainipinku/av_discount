@@ -45,7 +45,7 @@ class _VendorsState extends State<Vendors> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              black30Text('All vendors'),
+              black34Text('All vendors'),
               const SizedBox(height: 10,),
 
               Container(

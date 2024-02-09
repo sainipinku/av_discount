@@ -15,7 +15,11 @@ class WalletScreen extends StatelessWidget {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
         backgroundColor: const Color(0xffF6F6F9),
-        appBar: customAppBar(context, _key),
+        appBar: customAppBar(
+            context,
+            _key,
+            priceContainer(price: "9856")
+        ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
@@ -38,7 +42,7 @@ class WalletScreen extends StatelessWidget {
                 ),
 
               ),*/
-              black30Text('Wallet',),
+              black34Text('Wallet',),
 
               ///Wallet Container
               Container(

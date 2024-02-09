@@ -260,9 +260,13 @@ Widget customTextField({
 Widget underLineTextField({
   required TextEditingController controller ,
   Icon? suffixIcon,
+  Widget? suffix,
   Icon? prefixIcon,
   String? hintText,
+  String? title,
   TextInputType? textInputType,
+  bool? isEditable = true,
+  bool? isUnderLine = true,
 }){
   return TextFormField(
     //enabled: (disabled== null)? true : !disabled,
@@ -270,10 +274,13 @@ Widget underLineTextField({
       textCapitalization: TextCapitalization.words,
       controller: controller,
       keyboardType: textInputType ?? TextInputType.text,
-
+      enabled: isEditable,
       decoration: InputDecoration(
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
+        suffix: suffix,
+        label: Text(title ?? ""),
+        labelStyle: MyStyles.lightBlack12RegularStyle,
         //contentPadding: const EdgeInsets.all(12),
         hintText : hintText ?? '',
         hintStyle: MyStyles.lightBlack14RegularStyle,
@@ -294,6 +301,40 @@ Widget underLineTextField({
         focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(
                 color: MyAppTheme.blackTextColor),)
+      ));
+}
+
+Widget noLineTextField({
+  required TextEditingController controller ,
+  Icon? suffixIcon,
+  Widget? suffix,
+  Icon? prefixIcon,
+  String? hintText,
+  String? title,
+  TextInputType? textInputType,
+  bool? isEditable = true,
+}){
+  return TextFormField(
+    //enabled: (disabled== null)? true : !disabled,
+      style: MyStyles.lightBlack14BoldStyle,
+      textCapitalization: TextCapitalization.words,
+      controller: controller,
+      keyboardType: textInputType ?? TextInputType.text,
+      enabled: isEditable,
+      decoration: InputDecoration(
+        prefixIcon: prefixIcon,
+        suffixIcon: suffixIcon,
+        suffix: suffix,
+        label: Text(title ?? ""),
+        labelStyle: MyStyles.lightBlack12RegularStyle,
+        //contentPadding: const EdgeInsets.all(12),
+        hintText : hintText ?? '',
+        hintStyle: MyStyles.lightBlack14RegularStyle,
+        enabledBorder: null,
+        disabledBorder:null,
+        errorBorder: null,
+        focusedErrorBorder: null,
+        focusedBorder: null
       ));
 }
 

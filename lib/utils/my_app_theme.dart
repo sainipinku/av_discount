@@ -7,7 +7,7 @@ class MyAppTheme {
   static  Color secondaryBgColor = const Color(0xFFE9F0F9);
   static  Color primaryColor = const Color(0xFF2DE6D6);
   static  Color greenColor = const Color(0xFF00A538);
-  static Color white=const Color(0xFFF6F6F9);
+  static Color white = const Color(0xFFF6F6F9);
   static Color gray=const Color(0xFFD9DCE1);
   static Color selecttxt =const Color(0xFF00F2F2);
   static Color btnColor=const Color(0xFF306180);
@@ -62,7 +62,8 @@ class MyAppTheme {
   static  Color whiteColor = const Color(0xFFFFFFFF);
   static  Color blackTextColor = const Color(0xFF333333);
   static  Color redColor = const Color(0xFFED0F0F);
-  static  Color backgroundClr = const Color(0xFFED0F0F);
+  static  Color redTextColor = const Color(0xFFFE555D);
+  static  Color backgroundClr = const Color(0xFFF6F6F9);
   static  Color blueTextClr = const Color(0xFF007AB6);
 
 

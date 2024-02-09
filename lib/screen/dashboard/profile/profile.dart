@@ -1,5 +1,7 @@
 import 'package:av_discount_app/common_ui/globle_ui.dart';
 import 'package:av_discount_app/drawer/drawer_bar.dart';
+import 'package:av_discount_app/screen/dashboard/invoice/invoice.dart';
+import 'package:av_discount_app/screen/dashboard/profile/notification.dart';
 import 'package:av_discount_app/screen/dashboard/profile/transaction_history.dart';
 import 'package:av_discount_app/screen/dashboard/profile/wallet.dart';
 import 'package:av_discount_app/utils/my_app_theme.dart';
@@ -26,14 +28,13 @@ class _ProfileState extends State<Profile> {
       key: _key,
       appBar: customAppBar(context, _key),
       body: Container(
-        color: MyAppTheme.whiteColor,
         height: height,
         width: width,
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            black30Text(
+            black34Text(
               'Profile',
             ),
             Row(
@@ -63,11 +64,15 @@ class _ProfileState extends State<Profile> {
             CustomRectangle(onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => WalletScreen(),));
             },icon: "assets/icons/wallet.svg", text: "Wallet"),
-            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Invoice",),
+            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Invoice",onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Invoice(),));
+            },),
             CustomRectangle(icon: "assets/icons/wallet.svg", text: "Transaction History",onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => TransactionHistory(),));
             }),
-            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Notification",),
+            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Notification",onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationScreen(),));
+            },),
 
           ],
         ),
@@ -87,7 +92,7 @@ class CustomRectangle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: onTap ?? (){},
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
