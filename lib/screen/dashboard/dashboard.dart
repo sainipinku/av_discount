@@ -10,7 +10,8 @@ import 'home/home.dart';
 
 
 class DashBoard extends StatefulWidget {
-  const DashBoard({Key? key}) : super(key: key);
+  int inndex;
+  DashBoard({Key? key,required this.inndex}) : super(key: key);
 
   @override
   State<DashBoard> createState() => _DashBoardState();
@@ -25,6 +26,12 @@ class _DashBoardState extends State<DashBoard> {
     Invoice(),
     Profile(),
   ];
+  @override
+  void initState() {
+    // TODO: implement initState
+    selectedIndex = widget.inndex;
+    super.initState();
+  }
   void _onItemTapped(int index) {
     setState(() {
       selectedIndex = index;

@@ -60,7 +60,7 @@ class _SignInState extends State<SignIn> {
                     children: [
                       phoneTextField(
                           controller: phoneController),
-                      mainBtn(text: 'Send Otp',
+                      mainBtn(text: 'Send OTP',
                           onTap: (){
                             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Otp(),));
                           }, enble: phoneController.text),

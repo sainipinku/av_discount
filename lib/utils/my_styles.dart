@@ -9,6 +9,7 @@ class MyFontWeight {
   static FontWeight medium = FontWeight.w600;
   static FontWeight semiBold = FontWeight.bold;
   static FontWeight bold = FontWeight.w800;
+  static FontWeight bbold = FontWeight.w700;
   static FontWeight extraBold = FontWeight.w900;
 }
 
@@ -244,6 +245,11 @@ class MyStyles {
   static TextStyle red16BoldStyle =  TextStyle(
       fontWeight: MyFontWeight.bold,
       fontSize: 16,
+      color: MyAppTheme.redBtnColor);
+  static TextStyle red222BoldStyle =  TextStyle(
+      fontWeight: MyFontWeight.light,
+      fontSize: 22,
+      letterSpacing: 0.8,
       color: MyAppTheme.redBtnColor);
   static TextStyle black14BoldStyle =  TextStyle(
       fontWeight: MyFontWeight.bold,

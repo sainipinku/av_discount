@@ -18,7 +18,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List banner = ['https://picsum.photos/200/300','https://picsum.photos/200/300','https://picsum.photos/200/300',];
+  List banner = ['assets/images/Slider_01.jpg','assets/images/Slider_02.jpg','assets/images/Slider_03.jpg','assets/images/Slider_04.jpg'];
   late PageController _controller = PageController(
       viewportFraction: banner.length == 1 ? 1 : 0.80, initialPage: 0);
   int currentIndex = 0;
@@ -68,66 +68,54 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 black34Text("Welcome, Jessie"),
-                SizedBox(
+                Container(
                     width: width,
-                    height: height * 0.2,
+                    height: height * 0.25,
                     child: Stack(
                       children: [
-                        SizedBox(
-                          width:
-                          width,
-                          child: PageView.builder(
-                            controller: _controller,
-                            padEnds: false,
-                            onPageChanged: (value) {
-                              setState(() {
-                                currentIndex = value;
-                              });
-                            },
-                            itemCount: banner.length,
-                            itemBuilder: (_, index) {
-                              return GestureDetector(
-                                onTap: () {
+                        Align(alignment: Alignment.topCenter,
+                          child: SizedBox(
+                            width: width,
+                            child: PageView.builder(
+                              controller: _controller,
+                              padEnds: false,
+                              onPageChanged: (value) {
+                                setState(() {
+                                  currentIndex = value;
+                                });
+                              },
+                              itemCount: banner.length,
+                              itemBuilder: (_, index) {
+                                return GestureDetector(
+                                  onTap: () {
 
-                                },
-                                child:  SizedBox(
-                                    height: height * 0.15,
-                                    width: width,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Center(
-                                          child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(10),
-                                            child: FadeInImage(
-                                              image: NetworkImage(banner[index]),
-                                              fit: BoxFit.fill,
-                                              width: width,
-                                              height: height * 0.15,
-                                              placeholder: const AssetImage(
-                                                  "assets/images/tennis_ball_banner_placeholder.png"),
-                                              imageErrorBuilder: (context, error, stackTrace) {
-                                                return Image.asset(
-                                                  "assets/images/tennis_ball_banner_placeholder.png",
-                                                );
-                                              },
-                                            ),
-                                          )),
-                                    )),
-                              );
+                                  },
+                                  child:  Container(
+                                      height: height* 0.18,
+                                      width: width,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(Radius.circular(25))
+                                      ),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(25.0),
+                                        child: Image.asset(banner[index],),
+                                      )),
+                                );
 
-                            },
+                              },
+                            ),
                           ),
                         ),
                         Align(
                           alignment: Alignment.bottomCenter,
                           child: Padding(
                             padding: const EdgeInsets.only(
-                                bottom: 2.0),
+                                bottom: 1.0),
                             child: SmoothPageIndicator(
                                 controller: _controller,
                                 count: banner.length,
                                 effect:  const ExpandingDotsEffect(
-                                    radius: 16,
+                                    radius: 8,
                                     spacing: 8,
                                     dotHeight: 8,
                                     dotWidth: 8,
@@ -140,7 +128,7 @@ class _HomeState extends State<Home> {
                       ],
                     )
                 ),
-                Text("Recent Purchases",style: MyStyles.red16BoldStyle,),
+                Text("Recent Purchases",style: MyStyles.red222BoldStyle,),
 
                 const SizedBox(height: 10,),
 

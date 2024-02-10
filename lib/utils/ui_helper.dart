@@ -21,6 +21,19 @@ Widget svgImage({required String img, double? height, double? width, Color? colo
   );
 }
 
+Widget imgImage({required String img, double? height, double? width, Color? color,double? scaleFactor}) {
+  return Transform.scale(
+    scale: scaleFactor??1,
+    child: Image.asset(
+      img,
+      height: height ?? 24,
+      width: width ?? 24,
+      fit: BoxFit.scaleDown,
+      color: color,
+    ),
+  );
+}
+
 Widget svgMenuImage({double? height, double? width, Color? color}) {
   return Transform.scale(
     scale: 1.4,
@@ -543,8 +556,8 @@ priceContainer({
       ),
       child: Row(
         children: [
-          SvgPicture.asset(
-            "assets/icons/wallet.svg",
+          Image.asset(
+            "assets/images/cart.png",
             height: 22,
             width: 22,
           ),

@@ -1,5 +1,6 @@
 import 'package:av_discount_app/common_ui/globle_ui.dart';
 import 'package:av_discount_app/drawer/drawer_bar.dart';
+import 'package:av_discount_app/screen/dashboard/dashboard.dart';
 import 'package:av_discount_app/screen/dashboard/invoice/invoice.dart';
 import 'package:av_discount_app/screen/dashboard/profile/notification.dart';
 import 'package:av_discount_app/screen/dashboard/profile/transaction_history.dart';
@@ -58,19 +59,19 @@ class _ProfileState extends State<Profile> {
 
             const SizedBox(height: 20,),
 
-            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Contact Info",onTap: (){
+            CustomImageRectangle(icon: "assets/images/contact_us.png", text: "Contact Info",onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInfo(),));
             },),
-            CustomRectangle(onTap: (){
+            CustomImageRectangle(onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => WalletScreen(),));
-            },icon: "assets/icons/wallet.svg", text: "Wallet"),
-            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Invoice",onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Invoice(),));
+            },icon: "assets/images/wallet.png", text: "Wallet"),
+            CustomImageRectangle(icon: "assets/images/invoice.png", text: "Invoice",onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => DashBoard(inndex: 2,),));
             },),
-            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Transaction History",onTap: (){
+            CustomImageRectangle(icon: "assets/images/transaction_history.png", text: "Transaction History",onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => TransactionHistory(),));
             }),
-            CustomRectangle(icon: "assets/icons/wallet.svg", text: "Notification",onTap: (){
+            CustomImageRectangle(icon: "assets/images/notification.png", text: "Notification",onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationScreen(),));
             },),
 
@@ -116,6 +117,51 @@ class CustomRectangle extends StatelessWidget {
               children: [
                 //Icon(Icons.navigate_next),
                 svgImage(img: icon),
+                black16Text(text),
+              ],
+            ),
+            const Icon(Icons.navigate_next)
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+class CustomImageRectangle extends StatelessWidget {
+  final String icon;
+  final String text;
+  final VoidCallback? onTap;
+  const CustomImageRectangle({Key? key, required this.icon,this.onTap, required this.text}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap ?? (){},
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+        margin: const EdgeInsets.symmetric(vertical: 5,),
+        decoration: BoxDecoration(
+          color: MyAppTheme.whiteColor,
+          borderRadius: BorderRadius.circular(4),
+          boxShadow:  [
+            BoxShadow(
+              color: MyAppTheme.greyColor,
+              offset: const Offset(5, 5),
+              blurRadius: 10,
+              spreadRadius: -2,
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                //Icon(Icons.navigate_next),
+                imgImage(img: icon),
+                SizedBox(width: 5.0,),
                 black16Text(text),
               ],
             ),

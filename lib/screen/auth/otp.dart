@@ -60,7 +60,7 @@ class _OtpState extends State<Otp> {
                   ),
                   mainBtn(text: 'Verify',
                       onTap: (){
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DashBoard(),));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DashBoard(inndex: 0,),));
                       }, enble: 'txt'),
                   SizedBox(
                     height: 30,
