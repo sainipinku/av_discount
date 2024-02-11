@@ -40,7 +40,7 @@ class _VendorsState extends State<Vendors> {
       body: Container(
         height: height,
         width: width,
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +51,7 @@ class _VendorsState extends State<Vendors> {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
-                  color: MyAppTheme.greyColor,
+                  color: MyAppTheme.btnDisColor,
                 ),
                 child: Row(
                   children: [
@@ -75,7 +75,7 @@ class _VendorsState extends State<Vendors> {
                   ],
                 ),
               ),
-              const SizedBox(height: 15,),
+              const SizedBox(height: 25,),
 
               selectedIndex==0 ?
               GridView.builder(
@@ -88,7 +88,9 @@ class _VendorsState extends State<Vendors> {
                   childAspectRatio: 0.9,
                 ),
                 itemCount: 50,
-                itemBuilder: (context, index) => storePreviewContainer(img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),):
+                itemBuilder: (context, index) => storePreviewContainer(
+                    context: context,
+                    img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),):
                  /* Container(
                     height: height * 0.30,
                     child: GoogleMap(
@@ -98,7 +100,7 @@ class _VendorsState extends State<Vendors> {
                         _controller.complete(controller);
                       },
                     )*/
-                    Image(
+                    const Image(
                       image: AssetImage("assets/images/map_img.jpg"),
                     ),
 

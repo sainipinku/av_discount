@@ -12,7 +12,7 @@ import '../ui_helper.dart';
 
 Widget phoneTextField ( {required TextEditingController controller ,EdgeInsets? scrollPadding}) {
   return TextFormField(
-      //style: MyStyles.black18TextLight,
+      style: MyStyles.grey14Regular76PoppingStyle,
       scrollPadding: (scrollPadding == null) ? EdgeInsets.zero : scrollPadding,
       controller: controller,
       keyboardType: TextInputType.number,
@@ -25,15 +25,14 @@ Widget phoneTextField ( {required TextEditingController controller ,EdgeInsets? 
       },
       decoration: InputDecoration(
          hintText: 'MOBILE NUMBER',
-         labelText: 'MOBILE NUMBER',
-          labelStyle: MyStyles.black14BoldStyle
+         labelText: 'MOBILE NUMBER', labelStyle: MyStyles.grey14RegularPoppingStyle
       ),
   );
 }
 
 Widget emailTextField ( {required TextEditingController controller , String? svgIcon, EdgeInsets? scrollPadding}) {
   return TextFormField(
-      style: MyStyles.black14BoldStyle,
+      style: MyStyles.grey14Regular76PoppingStyle,
       scrollPadding: (scrollPadding == null) ? EdgeInsets.zero : scrollPadding,
       controller: controller,
       validator: (email) {
@@ -50,9 +49,9 @@ Widget emailTextField ( {required TextEditingController controller , String? svg
         prefixIcon: (svgIcon != null) ? svgImage(img: svgIcon) : null,
         // contentPadding: const EdgeInsets.all(12),
         hintText: enterEmailText,
-        hintStyle: MyStyles.black14BoldStyle,
+        hintStyle: MyStyles.grey14Regular76PoppingStyle,
         labelText: 'Enter Email id',
-          labelStyle: MyStyles.black14BoldStyle
+          labelStyle: MyStyles.grey14RegularPoppingStyle
 
       ));
 }
@@ -60,7 +59,7 @@ Widget emailTextField ( {required TextEditingController controller , String? svg
 Widget fullNameTextField ( {required TextEditingController controller , String? svgIcon, EdgeInsets? scrollPadding})
 {
   return TextFormField(
-      style: MyStyles.black14BoldStyle,
+      style: MyStyles.grey14Regular76PoppingStyle,
       scrollPadding: (scrollPadding == null) ? EdgeInsets.zero : scrollPadding,
       controller: controller,
       validator: (email) {
@@ -74,75 +73,13 @@ Widget fullNameTextField ( {required TextEditingController controller , String? 
           prefixIcon: (svgIcon != null) ? svgImage(img: svgIcon) : null,
           // contentPadding: const EdgeInsets.all(12),
           hintText: enterEmailText,
-          hintStyle: MyStyles.black14BoldStyle,
+          hintStyle: MyStyles.grey14Regular76PoppingStyle,
           labelText: 'Full Name',
-          labelStyle: MyStyles.black14BoldStyle
+          labelStyle: MyStyles.grey14RegularPoppingStyle
 
       ));
 }
 
-Widget passwordTextField ( {required TextEditingController controller ,
-  String? hintText ,
-  VoidCallback? onEyeTap,
-  bool isObscureBtnVisible =true,
-  String? svgIcon,
-  Icon? prefixIcon,
-  EdgeInsets? scrollPadding,
-  bool isObscureText = false}) {
-  return TextFormField(
-      //style: MyStyles.black18TextLight,
-      //scrollPadding: (scrollPadding == null) ? EdgeInsets.zero : scrollPadding,
-      controller: controller,
-      validator: (value) {
-        if(value!.isEmpty){
-          return 'Please fill password';
-        }else if(value.length < 6){
-          return "Password must contain six Characters";
-        }else{
-          return null;
-        }
-      },
-      obscureText: isObscureText,
-      obscuringCharacter: '*',
-      style: MyStyles.black14BoldStyle,
-      decoration: InputDecoration(
-        suffixIcon:(isObscureBtnVisible)? GestureDetector(
-          onTap: onEyeTap,
-          child: const Icon(Icons.remove_red_eye_rounded),
-        ):null,
-        // contentPadding: const EdgeInsets.all(12),
-        prefixIcon: prefixIcon,
-        hintText: hintText ?? '*************',
-
-        disabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: MyAppTheme.blackLightColor),
-            borderRadius: const BorderRadius.all(
-                Radius.circular(5))),
-        enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: MyAppTheme.blackLightColor),
-            borderRadius: const BorderRadius.all(
-                Radius.circular(5))),
-        hintStyle: MyStyles.lightBlack14RegularStyle,
-        errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: MyAppTheme.errorColor),
-            borderRadius: const BorderRadius.all(
-                Radius.circular(5))
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: MyAppTheme.blackLightColor),
-            borderRadius:  const BorderRadius.all(
-                Radius.circular(5))
-        ),
-        focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: MyAppTheme.blackLightColor),
-            borderRadius: BorderRadius.circular(5)),
-      ));
-}
 
 /*
 Widget customTextField ( {
@@ -316,7 +253,7 @@ Widget noLineTextField({
 }){
   return TextFormField(
     //enabled: (disabled== null)? true : !disabled,
-      style: MyStyles.lightBlack14BoldStyle,
+      style: MyStyles.black17LightSFPtoDisplayStyle,
       textCapitalization: TextCapitalization.words,
       controller: controller,
       keyboardType: textInputType ?? TextInputType.text,
@@ -326,10 +263,10 @@ Widget noLineTextField({
         suffixIcon: suffixIcon,
         suffix: suffix,
         label: Text(title ?? ""),
-        labelStyle: MyStyles.lightBlack12RegularStyle,
+        labelStyle: MyStyles.black12LightCMStyle,
         //contentPadding: const EdgeInsets.all(12),
         hintText : hintText ?? '',
-        hintStyle: MyStyles.lightBlack14RegularStyle,
+        hintStyle: MyStyles.black17LightSFPtoDisplayStyle,
         enabledBorder: null,
         disabledBorder:null,
         errorBorder: null,

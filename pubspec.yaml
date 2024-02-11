@@ -91,12 +91,22 @@ flutter:
   fonts:
     - family: DMSans
       fonts:
-        - asset: assets/fonts/DMSans-Bold.ttf
-        - asset: assets/fonts/DMSans-Light.ttf
-        - asset: assets/fonts/DMSans-Medium.ttf
-        - asset: assets/fonts/DMSans-Regular.ttf
-        - asset: assets/fonts/DMSans-SemiBold.ttf
+        - asset: assets/fonts/DMSans/DMSans-Bold.ttf
+        - asset: assets/fonts/DMSans/DMSans-Light.ttf
+        - asset: assets/fonts/DMSans/DMSans-Medium.ttf
+        - asset: assets/fonts/DMSans/DMSans-Regular.ttf
+        - asset: assets/fonts/DMSans/DMSans-SemiBold.ttf
           weight: 700
+
+    - family: SFCompactDisplay
+      fonts:
+        - asset: assets/fonts/SFCompactDisplay/FontsFree-Net-SFCompactDisplay-Black.ttf
+          weight: 700
+
+    - family: SFProDisplay
+      fonts:
+        - asset: assets/fonts/SFProDisplay/FontsFree-Net-SFProDisplay-Heavy-1.ttf
+          weight: 400
   # fonts:
   #   - family: Schyler
   #     fonts:

@@ -24,73 +24,74 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: SafeArea(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          color: Colors.white,
-          child: Stack(
-            children: [
-              Align(alignment: Alignment.topCenter,
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        color: Colors.white,
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.topCenter,
               child: Image.asset(
-                'assets/images/Ellipse.jpg',
-              ),),
-              Align(
-                alignment: Alignment.topCenter,
-                child: Container(
-                  height: MediaQuery.of(context).size.height * 0.50,
-                  width: MediaQuery.of(context).size.width,
-                  padding: EdgeInsets.all(30),
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/signin.png',
-                    ),
+              'assets/images/Ellipse.jpg',
+              ),
+            ),
+            Align(
+              alignment: Alignment.topCenter,
+              child: Container(
+                height: MediaQuery.of(context).size.height * 0.50,
+                width: MediaQuery.of(context).size.width,
+                padding: const EdgeInsets.all(30),
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/signin.png',
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  height: MediaQuery.of(context).size.height * 0.50,
-                  width: MediaQuery.of(context).size.width,
-                  padding: EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      phoneTextField(
-                          controller: phoneController),
-                      mainBtn(text: 'Send OTP',
-                          onTap: (){
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Otp(),));
-                          }, enble: phoneController.text),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          black14Text(alreadyHaveAccount),
-                          const SizedBox(width: 5,),
-                          GestureDetector(
-                              onTap: (){
-                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignUp(),));
-                              },
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(vertical: 10),
-                                child: Text(
-                                  registerNow,
-                                  style: MyStyles.red16BoldStyle,
-                                ),
-                              ))
-                        ],
-                      )
-                    ],
-                  ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                height: MediaQuery.of(context).size.height * 0.50,
+                width: MediaQuery.of(context).size.width,
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    phoneTextField(
+                        controller: phoneController),
+                    mainBtn(text: 'Send OTP',
+                        onTap: (){
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Otp(),));
+                        }, enble: phoneController.text),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(alreadyHaveAccount,style: MyStyles.grey14RegularPoppingStyle,),
+                        const SizedBox(width: 5,),
+                        GestureDetector(
+                            onTap: (){
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SignUp(),));
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              child: Text(
+                                registerNow,
+                                style: MyStyles.red16RegularStyle,
+                              ),
+                            ),
+                        )
+                      ],
+                    )
+                  ],
                 ),
               ),
+            ),
 
-            ],
-          )
-          ,
-        ),
+          ],
+        )
+        ,
       ),
     );
   }

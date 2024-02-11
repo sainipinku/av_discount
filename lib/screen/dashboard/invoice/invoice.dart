@@ -54,9 +54,10 @@ class _InvoiceState extends State<Invoice> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            black14DarkText('Poojara Fashions',),
-                            blackLight14Text('ID: GHFI4684JH82d'),
-                            blackLight14Text('09:15 AM, 14 Jan 2023',),
+                            Text('Poojara Fashions',style: MyStyles.black14BoldPoppingStyle,),
+
+                            Text('ID: GHFI4684JH82d',style: MyStyles.blackLight14LightPoppingStyle,),
+                            Text('09:15 AM, 14 Jan 2023',style: MyStyles.blackLight14LightPoppingStyle,),
                           ],
                         ),
                       ),

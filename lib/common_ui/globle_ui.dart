@@ -24,6 +24,7 @@ AppBar customAppBar(
         ),
 
         Row(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             widget ?? const SizedBox.shrink(),
             GestureDetector(

@@ -1,3 +1,4 @@
+import 'package:av_discount_app/utils/my_styles.dart';
 import 'package:av_discount_app/utils/ui_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -69,13 +70,13 @@ class NotificationScreen extends StatelessWidget {
                                         flex: 6,
                                         child: Padding(
                                             padding: const EdgeInsets.only(left: 8),
-                                            child: blackLight16Text(notificationData.msg,))
+                                            child: Text(notificationData.msg,style: MyStyles.black17LightSFPtoDisplayStyle,))
                                     ),
                                     Expanded(
                                         flex: 2,
                                         child: Align(
                                             alignment: Alignment.topCenter,
-                                            child: blackLight12Text(notificationData.time,))
+                                            child: Text(notificationData.time,style: MyStyles.black13LightSFPtoDisplayStyle,))
                                     )
                                   ],
                                 ),

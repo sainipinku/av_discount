@@ -153,10 +153,10 @@ class _ContactInfoState extends State<ContactInfo> {
   @override
   Widget build(BuildContext context) {
     nameController.text = "Punit";
-    dobController.text = "Punit";
-    emailController.text = "Punit";
-    phNumController.text = "Punit";
-    addressController.text = "Punit";
+    dobController.text = "13 Nov";
+    emailController.text = "punit@gmai.com";
+    phNumController.text = "9876543210";
+    addressController.text = "Jaipur";
     genderController.text ="Male";
     var height = MediaQuery.sizeOf(context).height;
     var width = MediaQuery.sizeOf(context).width;
@@ -169,7 +169,6 @@ class _ContactInfoState extends State<ContactInfo> {
             child: Column(
               children: [
                 Stack(
-
                   children: [
                     InkWell(
                         onTap: (){
@@ -181,25 +180,28 @@ class _ContactInfoState extends State<ContactInfo> {
                         child: black16Text('Contact info',))
                   ],
                 ),
-                const SizedBox(height: 10,),
+                const SizedBox(height: 20,),
                 InkWell(
                   onTap: (){
 
                   },
-                  child: Container(
-                    height: height*.15,
-                    width: width*.3,
-                    decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image: AssetImage(
-                          'assets/images/profile.png',
+                  child: CircleAvatar(
+                    radius: height*0.07,
+                    child: Container(
+                      height: height*0.14,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        image: const DecorationImage(
+                          image: AssetImage(
+                            'assets/images/profile.png',
+                          ),
+                          opacity: .6
                         ),
-                        opacity: .6
+                        color: MyAppTheme.greyColor,
+                        shape: BoxShape.circle,
                       ),
-                      color: MyAppTheme.greyColor,
-                      shape: BoxShape.circle,
+                      child: Icon(Icons.edit_outlined,color: MyAppTheme.white,),
                     ),
-                    child: Icon(Icons.edit_outlined,color: MyAppTheme.white,),
                   ),
                 ),
 
@@ -254,7 +256,7 @@ textField({
               },
               child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10,),
-                  child: Text('Change',style: MyStyles.green12BoldStyle,),
+                  child: Text('Change',style: MyStyles.green12MediumStyle,),
               ),
           ):const SizedBox.shrink(),
         )
