@@ -151,35 +151,37 @@ storePreviewContainer({
     onTap: (){
       Navigator.push(context, MaterialPageRoute(builder:(context) =>  VendorsProfile()));
     },
-    child: Stack(
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Image.asset(img,fit: BoxFit.cover,),
-            Text(name,style: MyStyles.black14BoldPoppingStyle,),
-            Row(
-              children: [
-                const Icon(Icons.location_on_outlined,size: 15),
-                Expanded(child: Text(location,style: MyStyles.black10lightPoppingStyle,)),
-              ],
-            ),
-          ],
-        ),
-        Positioned(
-          top: 10,
-          right: 10,
-          child: Container(
-            padding: const EdgeInsets.all(4),
-            decoration: BoxDecoration(
-                color: MyAppTheme.redLightColor,
-                shape: BoxShape.circle
-            ),
-            child: Text("4.3",style: MyStyles.white10BoldPoppingStyle,),
+    child: SizedBox(
+      child: Stack(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image.asset(img,fit: BoxFit.cover,),
+              Text(name,style: MyStyles.black14BoldPoppingStyle,),
+              Row(
+                children: [
+                  const Icon(Icons.location_on_outlined,size: 15),
+                  Expanded(child: Text(location,style: MyStyles.black10lightPoppingStyle,)),
+                ],
+              ),
+            ],
           ),
-        ),
-      ],
+          Positioned(
+            top: 10,
+            right: 20,
+            child: Container(
+              padding: const EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                  color: MyAppTheme.redLightColor,
+                  shape: BoxShape.circle
+              ),
+              child: Text("4.3",style: MyStyles.white10BoldPoppingStyle,),
+            ),
+          ),
+        ],
+      ),
     ),
   );
 }

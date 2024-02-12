@@ -87,19 +87,19 @@ class _HomeState extends State<Home> {
                               itemCount: banner.length,
                               itemBuilder: (_, index) {
                                 return GestureDetector(
-                                  onTap: () {
+                                    onTap: () {
 
-                                  },
-                                  child: SizedBox(
+                                    },
+                                    child: SizedBox(
                                       height: height* 0.18,
                                       width: width,
                                       child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(25.0),
-                                        child: Image(
-                                          image: AssetImage(banner[index],),
-                                          fit: BoxFit.contain,
-                                      )
-                                ),)
+                                          borderRadius: BorderRadius.circular(25.0),
+                                          child: Image(
+                                            image: AssetImage(banner[index],),
+                                            fit: BoxFit.contain,
+                                          )
+                                      ),)
                                 );
 
                               },
@@ -115,12 +115,12 @@ class _HomeState extends State<Home> {
                                 controller: _controller,
                                 count: banner.length,
                                 effect:  const ExpandingDotsEffect(
-                                    radius: 8,
-                                    spacing: 8,
-                                    dotHeight: 8,
-                                    dotWidth: 8,
-                                    dotColor: Colors.black45,
-                                    activeDotColor: Colors.black,
+                                  radius: 8,
+                                  spacing: 8,
+                                  dotHeight: 8,
+                                  dotWidth: 8,
+                                  dotColor: Colors.black45,
+                                  activeDotColor: Colors.black,
                                 )
                             ),
                           ),
@@ -129,38 +129,45 @@ class _HomeState extends State<Home> {
                     )
                 ),
                 Text("Recent Purchases",style: MyStyles.red222BoldStyle,),
-
                 const SizedBox(height: 10,),
-
                 Row(
                   children: [
-                    Padding(padding: const EdgeInsets.symmetric(vertical: 10),child: storePreviewContainer(
-                        context: context,
-                        img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),),
+                    SizedBox(
+                      height: height * 0.25,width:width * 0.45,
+                      child: storePreviewContainer(
+                          context: context,
+                          img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),
+                    ),
                     const SizedBox(width: 5,),
-                    Padding(padding: const EdgeInsets.symmetric(vertical: 10),child: storePreviewContainer(
-                        context: context,
-                        img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),),
+                    SizedBox(
+                      height: height * 0.25,width:width * 0.45,
+                      child: storePreviewContainer(
+                          context: context,
+                          img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),
+                    ),
                   ],
                 ),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    red22BoldText("All shops"),
-                    Row(
-                      children: [
-                        red16RegularText("See All"),
-                        const SizedBox(width: 5,),
-                        Icon(Icons.arrow_forward,size: 18,color: MyAppTheme.redColor),
-                      ],
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 5.0,right: 5.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      red22BoldText("All shops"),
+                      Row(
+                        children: [
+                          red16RegularText("See All"),
+                          const SizedBox(width: 5,),
+                          Icon(Icons.arrow_forward,size: 18,color: MyAppTheme.redColor),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 5,),
 
                 GridView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
+                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 300,
