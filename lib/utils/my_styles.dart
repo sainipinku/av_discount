@@ -8,35 +8,12 @@ class MyFontWeight {
   static FontWeight regular = FontWeight.w500;
   static FontWeight medium = FontWeight.w600;
   static FontWeight semiBold = FontWeight.bold;
-  static FontWeight bold = FontWeight.w800;
-  static FontWeight bbold = FontWeight.w700;
+  static FontWeight bold = FontWeight.w700;
   static FontWeight extraBold = FontWeight.w900;
 }
 
 class MyStyles {
 
-  static TextStyle underLineSubHeading = TextStyle(
-      fontSize:  14,
-      color: MyAppTheme.whiteColor,
-      fontWeight: MyFontWeight.regular,
-      decoration: TextDecoration.underline,
-      decorationColor: MyAppTheme.whiteColor);
-
-
-  static TextStyle underLine18Style = TextStyle(
-      fontSize:  18,
-      color: MyAppTheme.whiteColor,
-      fontWeight: MyFontWeight.bold,
-      decoration: TextDecoration.underline,
-      decorationColor: MyAppTheme.whiteColor);
-
-  /// ///////////////White Color /////////////////////
-
-  ///////////////////UnderLine//////////////////////
-  /*static TextStyle white16BoldStyle =  TextStyle(
-      fontWeight: MyFontWeight.bold,
-      fontSize: 16,
-      color: MyAppTheme.whiteColor);*/
   ///////////////bold////////////////
   static TextStyle white24boldStyle =  TextStyle(
       fontWeight: MyFontWeight.semiBold,
@@ -45,7 +22,7 @@ class MyStyles {
 
   static TextStyle white22boldStyle =  TextStyle(
       fontWeight: MyFontWeight.semiBold,
-      fontSize:  22,
+      fontSize: 22,
       color: MyAppTheme.whiteColor);
 
   static TextStyle white20boldStyle =  TextStyle(
@@ -63,10 +40,7 @@ class MyStyles {
       fontSize:  16,
       color: MyAppTheme.whiteColor);
 
-  static TextStyle white14boldStyle =  TextStyle(
-      fontWeight: MyFontWeight.semiBold,
-      fontSize:  14,
-      color: MyAppTheme.whiteColor);
+
 
   static TextStyle white12BoldStyle =  TextStyle(
       fontWeight: MyFontWeight.bold,
@@ -129,29 +103,6 @@ class MyStyles {
       fontSize:  12,
       color: MyAppTheme.whiteColor);
 
-  static TextStyle green14BoldStyle =  TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 14,
-      color: MyAppTheme.greenColor
-  );
-  static TextStyle green12BoldStyle =  TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 14,
-      color: MyAppTheme.greenColor
-  );
-
-  static TextStyle blue14BoldStyle =  TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 14,
-      color: MyAppTheme.blueTextClr
-  );
-
-///////////////////Personalized////////////////////
-//   static TextStyle storyContentStyle =  TextStyle(
-//       fontWeight: MyFontWeight.light,
-//       fontSize: 14,
-//       letterSpacing: 1.5,
-//       color: MyAppTheme.whiteColor);
 
 
 
@@ -192,11 +143,7 @@ class MyStyles {
       color: MyAppTheme.greenColor
   );
 
-  static TextStyle red14RegularStyle =  TextStyle(
-      fontWeight: MyFontWeight.bold,
-      fontSize:  14,
-      color: MyAppTheme.redBtnColor
-  );
+
 
 
   ////////////////////Light Black /////////////////////
@@ -230,33 +177,39 @@ class MyStyles {
       fontWeight: MyFontWeight.bold,
       fontSize: 16,
       color: MyAppTheme.blackColor);
+
   static TextStyle black20BoldStyle =  TextStyle(
       fontWeight: MyFontWeight.bold,
       fontSize: 20,
       color: MyAppTheme.blackColor);
+
   static TextStyle black30BoldStyle =  TextStyle(
       fontWeight: MyFontWeight.bold,
       fontSize: 30,
       color: MyAppTheme.blackColor);
-  static TextStyle black34BoldStyle =  TextStyle(
-      fontWeight: MyFontWeight.bold,
-      fontSize: 34,
-      color: MyAppTheme.blackColor);
+
   static TextStyle red16BoldStyle =  TextStyle(
       fontWeight: MyFontWeight.bold,
       fontSize: 16,
       color: MyAppTheme.redBtnColor);
+
+  static TextStyle red16RegularStyle =  TextStyle(
+      fontWeight: MyFontWeight.regular,
+      fontSize: 16,
+      color: MyAppTheme.redBtnColor);
+
   static TextStyle red222BoldStyle =  TextStyle(
       fontWeight: MyFontWeight.light,
       fontSize: 22,
       letterSpacing: 0.8,
       color: MyAppTheme.redBtnColor);
+
   static TextStyle black14BoldStyle =  TextStyle(
       fontWeight: MyFontWeight.bold,
       fontSize: 14,
       color: MyAppTheme.blackColor);
 
-  /////Light
+  ///Light
   static TextStyle black16LightStyle =  TextStyle(
       fontWeight: MyFontWeight.light,
       fontSize: 16,
@@ -266,5 +219,188 @@ class MyStyles {
       fontWeight: MyFontWeight.light,
       fontSize: 12,
       color: MyAppTheme.blackColor);
+
+
+
+
+  /////////////////This Project ///////////////
+
+///Black
+  static TextStyle black34BoldStyle =  GoogleFonts.dmSans(
+      fontWeight: MyFontWeight.bold,
+      fontSize: 34,
+      color: MyAppTheme.blackColor);
+
+  static TextStyle black28BoldPoppingStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.bold,
+      fontSize: 28,
+      color: MyAppTheme.blackColor);
+
+  static TextStyle black24MediumPoppingStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.medium,
+      fontSize: 24,
+      color: MyAppTheme.blackColor);
+
+  static TextStyle black22MediumStyle =  TextStyle(
+    fontFamily: "SFCompactDisplay",
+      fontWeight: MyFontWeight.medium,
+      fontSize: 22,
+      color: MyAppTheme.blackColor);
+
+  static TextStyle black17RegularStyle =  TextStyle(
+      fontFamily: "SFCompactDisplay",
+      fontWeight: MyFontWeight.regular,
+      fontSize: 17,
+      color: MyAppTheme.blackColor);
+
+  static TextStyle black17RegularPoppingStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.regular,
+      fontSize: 17,
+      color: MyAppTheme.blackColor);
+  static TextStyle black16boldPoppinsStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.bold,
+      fontSize:  16,
+      letterSpacing: 0.8,
+      color: MyAppTheme.blackColor);
+
+  static TextStyle black14BoldPoppingStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.bold,
+      fontSize: 14,
+      color: MyAppTheme.blackColor);
+
+  static TextStyle black14LightPoppingStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.light,
+      fontSize: 14,
+      color: MyAppTheme.blackColor);
+
+  static TextStyle black14MediumPoppingStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.medium,
+      fontSize: 14,
+      color: MyAppTheme.blackColor);
+
+  static TextStyle black10lightPoppingStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.light,
+      fontSize: 10,
+      letterSpacing: .8,
+      color: MyAppTheme.blackColor);
+
+  ///light black
+
+  static TextStyle black12LightCMStyle =  GoogleFonts.catamaran(
+      fontWeight: MyFontWeight.light,
+      fontSize: 12,
+      color: MyAppTheme.blackTextColor);
+
+  static TextStyle black17LightSFPtoDisplayStyle =  TextStyle(
+      fontFamily: "SFProDisplay",
+      fontWeight: MyFontWeight.light,
+      fontSize: 17,
+      color: MyAppTheme.blackTextColor
+  );
+
+  static TextStyle blackLight14LightPoppingStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.light,
+      fontSize: 14,
+      color: MyAppTheme.blackTextColor);
+
+  static TextStyle black13LightSFPtoDisplayStyle =  TextStyle(
+      fontFamily: "SFProDisplay",
+      fontWeight: MyFontWeight.light,
+      fontSize: 13,
+      color: Colors.black.withOpacity(.6)
+  );
+
+  ///Red
+  static TextStyle red14RegularStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.bold,
+      fontSize:  14,
+      color: MyAppTheme.redColor
+  );
+
+  static TextStyle red16BoldQuicksandStyle =  GoogleFonts.quicksand(
+      fontWeight: MyFontWeight.bold,
+      fontSize:  16,
+      color: MyAppTheme.redTextColor);
+
+  static TextStyle red16MediumPoppinsStyle =  GoogleFonts.quicksand(
+      fontWeight: MyFontWeight.medium,
+      fontSize:  16,
+      color: MyAppTheme.redTextColor);
+
+  ///Green
+  static TextStyle green12MediumStyle =  TextStyle(
+      fontFamily: "SFProDisplay",
+      fontWeight: MyFontWeight.medium,
+      fontSize: 10,
+      color: MyAppTheme.greenColor
+  );
+  static TextStyle green14BoldStyle =  GoogleFonts.poppins(
+      fontWeight: FontWeight.bold,
+      fontSize: 14,
+      color: MyAppTheme.greenColor
+  );
+
+  ///Grey
+
+  static TextStyle grey15RegularPoppingStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.regular,
+      fontSize: 15,
+      color: Colors.black.withOpacity(.33)
+  );
+  static TextStyle grey14RegularPoppingStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.regular,
+      fontSize: 14,
+      color: Colors.black.withOpacity(.33)
+  );
+  static TextStyle grey14Regular76PoppingStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.regular,
+      fontSize: 14,
+      color: Colors.black.withOpacity(.76)
+  );
+
+  static TextStyle grey14lightPoppingStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.light,
+      fontSize: 14,
+      color: MyAppTheme.greyColor);
+
+  ///Blue
+
+  static TextStyle blue14BoldStyle =  GoogleFonts.poppins(
+      fontWeight: FontWeight.bold,
+      fontSize: 14,
+      color: MyAppTheme.blueTextClr
+  );
+
+  ///white
+
+  static TextStyle white14boldStyle =  GoogleFonts.dmSans(
+      fontWeight: MyFontWeight.bold,
+      fontSize:  14,
+      letterSpacing: 0.8,
+      color: MyAppTheme.whiteColor);
+
+  static TextStyle white16boldPoppinsStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.bold,
+      fontSize:  16,
+      letterSpacing: 0.8,
+      color: MyAppTheme.whiteColor);
+
+  static TextStyle white24MediumStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.medium,
+      fontSize:  24,
+      color: MyAppTheme.whiteColor);
+
+  static TextStyle white12BoldPoppingStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.bold,
+      fontSize: 12,
+      color: MyAppTheme.whiteColor);
+
+  static TextStyle white10BoldPoppingStyle =  GoogleFonts.poppins(
+      fontWeight: MyFontWeight.bold,
+      fontSize: 10,
+      letterSpacing: .8,
+      color: MyAppTheme.whiteColor);
+
+
 
 }

@@ -21,14 +21,14 @@ class _OtpState extends State<Otp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
+
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_ios_rounded,
             color: Colors.black,
           ),
@@ -36,17 +36,21 @@ class _OtpState extends State<Otp> {
         elevation: 0,
       ),
       body: Container(
-          margin: EdgeInsets.only(left: 25, right: 25),
-          alignment: Alignment.center,
+          margin: const EdgeInsets.only(left: 25, right: 25),
+
           child: SingleChildScrollView(
             child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+
+                  const SizedBox(
+                    height: 30,
+                  ),
                   Text(
                     "Enter 4 digit code sent to you",textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    style: MyStyles.black28BoldPoppingStyle,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
 
@@ -55,7 +59,7 @@ class _OtpState extends State<Otp> {
                     showCursor: true,
                     onCompleted: (pin) => print(pin),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   mainBtn(
@@ -63,19 +67,19 @@ class _OtpState extends State<Otp> {
                       onTap: (){
                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DashBoard(inndex: 0,),));
                       }, enble: 'txt'),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
-                      style: MyStyles.black14BoldStyle,
+                      style: MyStyles.grey15RegularPoppingStyle,
                       children: <TextSpan>[
                         TextSpan(text: 'Didn’t receive a verification code?\n',),
                         TextSpan(
                             text: 'Send Otp ',
                             style: MyStyles.red14RegularStyle),
-                        TextSpan(text: ' | ',),
+                        TextSpan(text: ' | ',style: MyStyles.red14RegularStyle),
                         TextSpan(
                             text: ' Change Number ',
                             style: MyStyles.red14RegularStyle),

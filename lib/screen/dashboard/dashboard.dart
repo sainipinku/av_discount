@@ -6,12 +6,13 @@ import 'package:av_discount_app/screen/dashboard/vendors/vendors_screen.dart';
 import 'package:av_discount_app/utils/my_app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'home/home.dart';
 
 
 class DashBoard extends StatefulWidget {
   int inndex;
-  DashBoard({Key? key,required this.inndex}) : super(key: key);
+  DashBoard({Key? key,required this.inndex,}) : super(key: key);
 
   @override
   State<DashBoard> createState() => _DashBoardState();
@@ -132,17 +133,17 @@ class _DashBoardState extends State<DashBoard> {
           ],
           currentIndex: selectedIndex,
           backgroundColor: MyAppTheme.btnColor,
-          selectedLabelStyle:  TextStyle(
-            fontWeight: FontWeight.w400,
+          selectedLabelStyle:  GoogleFonts.catamaran(
+            fontWeight: FontWeight.w500,
             height: 1.5,
             fontSize: 13,
             color: MyAppTheme.selecttxt,
           ),
           type: BottomNavigationBarType.fixed,
-          unselectedLabelStyle: const TextStyle(
-            fontWeight: FontWeight.w400,
+          unselectedLabelStyle: GoogleFonts.catamaran(
+            fontWeight: FontWeight.w500,
             height: 1.5,
-            fontSize: 13,
+            fontSize: 12,
             color: Colors.white,
           ),
           selectedItemColor: MyAppTheme.selecttxt,

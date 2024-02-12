@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 black34Text("Welcome, Jessie"),
-                Container(
+                SizedBox(
                     width: width,
                     height: height * 0.25,
                     child: Stack(
@@ -90,16 +90,16 @@ class _HomeState extends State<Home> {
                                   onTap: () {
 
                                   },
-                                  child:  Container(
+                                  child: SizedBox(
                                       height: height* 0.18,
                                       width: width,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(Radius.circular(25))
-                                      ),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(25.0),
-                                        child: Image.asset(banner[index],),
-                                      )),
+                                        child: Image(
+                                          image: AssetImage(banner[index],),
+                                          fit: BoxFit.contain,
+                                      )
+                                ),)
                                 );
 
                               },
@@ -134,9 +134,13 @@ class _HomeState extends State<Home> {
 
                 Row(
                   children: [
-                    Padding(padding: const EdgeInsets.symmetric(vertical: 10),child: storePreviewContainer(img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),),
+                    Padding(padding: const EdgeInsets.symmetric(vertical: 10),child: storePreviewContainer(
+                        context: context,
+                        img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),),
                     const SizedBox(width: 5,),
-                    Padding(padding: const EdgeInsets.symmetric(vertical: 10),child: storePreviewContainer(img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),),
+                    Padding(padding: const EdgeInsets.symmetric(vertical: 10),child: storePreviewContainer(
+                        context: context,
+                        img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),),
                   ],
                 ),
 
@@ -165,7 +169,9 @@ class _HomeState extends State<Home> {
                     childAspectRatio: 0.9,
                   ),
                   itemCount: 50,
-                  itemBuilder: (context, index) => storePreviewContainer(img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),)
+                  itemBuilder: (context, index) => storePreviewContainer(
+                      context: context,
+                      img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),)
               ],
             ),
           ),

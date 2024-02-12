@@ -31,7 +31,7 @@ class _ProfileState extends State<Profile> {
       body: Container(
         height: height,
         width: width,
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -49,7 +49,7 @@ class _ProfileState extends State<Profile> {
                           const AssetImage('assets/images/profile.png'),
                     ),
                     const SizedBox(height: 20),
-                    black20Text(
+                    black22Text(
                       'Jonas Macroni',
                     ),
                   ],
@@ -85,50 +85,6 @@ class _ProfileState extends State<Profile> {
   }
 }
 
-class CustomRectangle extends StatelessWidget {
-  final String icon;
-  final String text;
-  final VoidCallback? onTap;
-   const CustomRectangle({Key? key, required this.icon,this.onTap, required this.text}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap ?? (){},
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
-        margin: const EdgeInsets.symmetric(vertical: 5,),
-        decoration: BoxDecoration(
-          color: MyAppTheme.whiteColor,
-          borderRadius: BorderRadius.circular(4),
-          boxShadow:  [
-            BoxShadow(
-              color: MyAppTheme.greyColor,
-              offset: const Offset(5, 5),
-              blurRadius: 10,
-              spreadRadius: -2,
-            ),
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                //Icon(Icons.navigate_next),
-                svgImage(img: icon),
-                black16Text(text),
-              ],
-            ),
-            const Icon(Icons.navigate_next)
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-
 class CustomImageRectangle extends StatelessWidget {
   final String icon;
   final String text;
@@ -140,14 +96,14 @@ class CustomImageRectangle extends StatelessWidget {
     return GestureDetector(
       onTap: onTap ?? (){},
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+        padding: const EdgeInsets.symmetric(vertical: 14,horizontal: 10),
         margin: const EdgeInsets.symmetric(vertical: 5,),
         decoration: BoxDecoration(
           color: MyAppTheme.whiteColor,
           borderRadius: BorderRadius.circular(4),
           boxShadow:  [
             BoxShadow(
-              color: MyAppTheme.greyColor,
+              color: Colors.grey.shade300,
               offset: const Offset(5, 5),
               blurRadius: 10,
               spreadRadius: -2,
@@ -161,8 +117,8 @@ class CustomImageRectangle extends StatelessWidget {
               children: [
                 //Icon(Icons.navigate_next),
                 imgImage(img: icon),
-                SizedBox(width: 5.0,),
-                black16Text(text),
+                const SizedBox(width: 20.0,),
+                black17PoppinsText(text),
               ],
             ),
             const Icon(Icons.navigate_next)

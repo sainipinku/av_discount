@@ -3,6 +3,9 @@ import 'package:av_discount_app/utils/my_app_theme.dart';
 import 'package:av_discount_app/utils/ui_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../../../utils/my_styles.dart';
 
 
 class WalletScreen extends StatefulWidget {
@@ -33,7 +36,7 @@ class _WalletScreenState extends State<WalletScreen> {
         ),
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -60,28 +63,29 @@ class _WalletScreenState extends State<WalletScreen> {
                 ///Wallet Container
                 Container(
                   height: height *.15,
-                  padding: const EdgeInsets.all(10),
-                  margin: const EdgeInsets.only(bottom: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  margin: const EdgeInsets.only(bottom: 10,top: 10),
                   decoration: const BoxDecoration(
                       color: Color(0xff1EABAB),
                       borderRadius: BorderRadius.all(Radius.circular(6))
-
                   ),
+
                   child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          black14Text('Balance'),
-                          white20boldText(' ₹ 19,453',),
-
+                          Text('Balance',style: MyStyles.black14MediumPoppingStyle,),
+                          Text('₹ 19,453',style: MyStyles.white24MediumStyle,),
                         ],
                       ),
-                      Image.asset('assets/images/wallet.png')
+                      Image.asset('assets/images/wallet_img.png')
                     ],
                   ),
                 ),
 
+                const SizedBox(height: 10,),
                 ListView.builder(
                   shrinkWrap: true,
                   itemCount: 4,
@@ -97,8 +101,8 @@ class _WalletScreenState extends State<WalletScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        black14Text('Poojara Fashion',),
-                        red16RegularText('₹ 120',)
+                        Text('Poojara Fashion',style: MyStyles.black14BoldPoppingStyle,),
+                        Text('₹ 120',style: MyStyles.red16BoldQuicksandStyle,)
                       ],
                     ),
                   ),
@@ -108,97 +112,97 @@ class _WalletScreenState extends State<WalletScreen> {
             ),
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(
-              icon: selectedIndex == 0 ? SvgPicture.asset(
-                'assets/icons/home.svg',
-                allowDrawingOutsideViewBox: true,
-                height: 20,
-                width: 20,
-                color: MyAppTheme.selecttxt,
-              ): SvgPicture.asset(
-                'assets/icons/home.svg',
-                allowDrawingOutsideViewBox: true,
-                height: 20,
-                width: 20,
-                color: Colors.white,
-              ),
-              label: 'Home',
+      bottomNavigationBar:BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: selectedIndex == 0 ? SvgPicture.asset(
+              'assets/icons/home.svg',
+              allowDrawingOutsideViewBox: true,
+              height: 20,
+              width: 20,
+              color: MyAppTheme.selecttxt,
+            ): SvgPicture.asset(
+              'assets/icons/home.svg',
+              allowDrawingOutsideViewBox: true,
+              height: 20,
+              width: 20,
+              color: Colors.white,
             ),
-            BottomNavigationBarItem(
-              icon: selectedIndex == 1
-                  ?  SvgPicture.asset(
-                'assets/icons/profile.svg',
-                allowDrawingOutsideViewBox: true,
-                height: 20,
-                width: 20,
-                color: MyAppTheme.selecttxt,
-              ) : SvgPicture.asset(
-                'assets/icons/profile.svg',
-                allowDrawingOutsideViewBox: true,
-                height: 20,
-                width: 20,
-                color: Colors.white,
-              ),
-              label: 'Venders',
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: selectedIndex == 1
+                ?  SvgPicture.asset(
+              'assets/icons/profile.svg',
+              allowDrawingOutsideViewBox: true,
+              height: 20,
+              width: 20,
+              color: MyAppTheme.selecttxt,
+            ) : SvgPicture.asset(
+              'assets/icons/profile.svg',
+              allowDrawingOutsideViewBox: true,
+              height: 20,
+              width: 20,
+              color: Colors.white,
             ),
-            BottomNavigationBarItem(
-              icon: selectedIndex == 2
-                  ?  SvgPicture.asset(
-                'assets/icons/invoice.svg',
-                allowDrawingOutsideViewBox: true,
-                height: 20,
-                width: 20,
-                color: MyAppTheme.selecttxt,
-              ): SvgPicture.asset(
-                'assets/icons/invoice.svg',
-                allowDrawingOutsideViewBox: true,
-                height: 20,
-                width: 20,
-                color: Colors.white,
-              ),
-              label: 'Invoice',
+            label: 'Venders',
+          ),
+          BottomNavigationBarItem(
+            icon: selectedIndex == 2
+                ?  SvgPicture.asset(
+              'assets/icons/invoice.svg',
+              allowDrawingOutsideViewBox: true,
+              height: 20,
+              width: 20,
+              color: MyAppTheme.selecttxt,
+            ): SvgPicture.asset(
+              'assets/icons/invoice.svg',
+              allowDrawingOutsideViewBox: true,
+              height: 20,
+              width: 20,
+              color: Colors.white,
             ),
-            BottomNavigationBarItem(
-              icon: selectedIndex == 3
-                  ?  SvgPicture.asset(
-                'assets/icons/profile.svg',
-                allowDrawingOutsideViewBox: true,
-                height: 20,
-                width: 20,
-                color: MyAppTheme.selecttxt,
-              ): SvgPicture.asset(
-                'assets/icons/profile.svg',
-                allowDrawingOutsideViewBox: true,
-                height: 20,
-                width: 20,
-                color: Colors.white,
-              ),
-              label: 'Profile',
+            label: 'Invoice',
+          ),
+          BottomNavigationBarItem(
+            icon: selectedIndex == 3
+                ?  SvgPicture.asset(
+              'assets/icons/profile.svg',
+              allowDrawingOutsideViewBox: true,
+              height: 20,
+              width: 20,
+              color: MyAppTheme.selecttxt,
+            ): SvgPicture.asset(
+              'assets/icons/profile.svg',
+              allowDrawingOutsideViewBox: true,
+              height: 20,
+              width: 20,
+              color: Colors.white,
             ),
+            label: 'Profile',
+          ),
 
 
-          ],
-          currentIndex: selectedIndex,
-          backgroundColor: MyAppTheme.btnColor,
-          selectedLabelStyle:  TextStyle(
-            fontWeight: FontWeight.w400,
-            height: 1.5,
-            fontSize: 13,
-            color: MyAppTheme.selecttxt,
-          ),
-          type: BottomNavigationBarType.fixed,
-          unselectedLabelStyle: const TextStyle(
-            fontWeight: FontWeight.w400,
-            height: 1.5,
-            fontSize: 13,
-            color: Colors.white,
-          ),
-          selectedItemColor: MyAppTheme.selecttxt,
-          unselectedItemColor: Colors.white,
-          onTap: _onItemTapped,
+        ],
+        currentIndex: selectedIndex,
+        backgroundColor: MyAppTheme.btnColor,
+        selectedLabelStyle:  GoogleFonts.catamaran(
+          fontWeight: FontWeight.w500,
+          height: 1.5,
+          fontSize: 13,
+          color: MyAppTheme.selecttxt,
         ),
+        type: BottomNavigationBarType.fixed,
+        unselectedLabelStyle: GoogleFonts.catamaran(
+          fontWeight: FontWeight.w500,
+          height: 1.5,
+          fontSize: 12,
+          color: Colors.white,
+        ),
+        selectedItemColor: MyAppTheme.selecttxt,
+        unselectedItemColor: Colors.white,
+        onTap: _onItemTapped,
+      ),
     );
 
   }
