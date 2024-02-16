@@ -84,7 +84,7 @@ class _VendorsState extends State<Vendors> {
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 300,
                   mainAxisSpacing: 10,
-                  crossAxisSpacing: 5,
+                  crossAxisSpacing: 29,
                   childAspectRatio: 0.9,
                 ),
                 itemCount: 50,

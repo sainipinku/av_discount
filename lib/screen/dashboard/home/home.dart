@@ -70,12 +70,13 @@ class _HomeState extends State<Home> {
                 black34Text("Welcome, Jessie"),
                 SizedBox(
                     width: width,
-                    height: height * 0.25,
+                    height: height * 0.20,
                     child: Stack(
                       children: [
                         Align(alignment: Alignment.topCenter,
                           child: SizedBox(
                             width: width,
+                            height: height* 0.18,
                             child: PageView.builder(
                               controller: _controller,
                               padEnds: false,
@@ -94,12 +95,16 @@ class _HomeState extends State<Home> {
                                       height: height* 0.18,
                                       width: width,
                                       child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(25.0),
+                                        borderRadius: BorderRadius.circular(20), // Image border
+                                        child: SizedBox.fromSize(
+                                          size: Size.fromRadius(48), // Image radius
                                           child: Image(
                                             image: AssetImage(banner[index],),
-                                            fit: BoxFit.contain,
-                                          )
-                                      ),)
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                    )
                                 );
 
                               },
@@ -131,19 +136,26 @@ class _HomeState extends State<Home> {
                 Text("Recent Purchases",style: MyStyles.red222BoldStyle,),
                 const SizedBox(height: 10,),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: height * 0.25,width:width * 0.45,
-                      child: storePreviewContainer(
-                          context: context,
-                          img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),
+                    Expanded(
+                      child: Container(
+                        height: height * 0.22,
+                        margin: EdgeInsets.only(right: 15.0),
+                        child: storePreviewContainer(
+                            context: context,
+                            img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),
+                      ),
                     ),
-                    const SizedBox(width: 5,),
-                    SizedBox(
-                      height: height * 0.25,width:width * 0.45,
-                      child: storePreviewContainer(
-                          context: context,
-                          img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),
+                    Expanded(
+                      child: Container(
+                        height: height * 0.22,
+                        margin: EdgeInsets.only(left: 15.0),
+                        child: storePreviewContainer(
+                            context: context,
+                            img: "assets/images/imggg.png", name: "Poojara Fashions", location: "Vashali Nagar"),
+                      ),
                     ),
                   ],
                 ),
@@ -172,7 +184,7 @@ class _HomeState extends State<Home> {
                   gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 300,
                     mainAxisSpacing: 10,
-                    crossAxisSpacing: 5,
+                    crossAxisSpacing: 29,
                     childAspectRatio: 0.9,
                   ),
                   itemCount: 50,

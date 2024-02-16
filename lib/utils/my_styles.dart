@@ -8,7 +8,7 @@ class MyFontWeight {
   static FontWeight regular = FontWeight.w500;
   static FontWeight medium = FontWeight.w600;
   static FontWeight semiBold = FontWeight.bold;
-  static FontWeight bold = FontWeight.w700;
+  static FontWeight bold = FontWeight.w400;
   static FontWeight extraBold = FontWeight.w900;
 }
 
@@ -227,7 +227,7 @@ class MyStyles {
 
 ///Black
   static TextStyle black34BoldStyle =  GoogleFonts.dmSans(
-      fontWeight: MyFontWeight.bold,
+      fontWeight: MyFontWeight.light,
       fontSize: 34,
       color: MyAppTheme.blackColor);
 
@@ -312,7 +312,7 @@ class MyStyles {
 
   ///Red
   static TextStyle red14RegularStyle =  GoogleFonts.poppins(
-      fontWeight: MyFontWeight.bold,
+      fontWeight: MyFontWeight.light,
       fontSize:  14,
       color: MyAppTheme.redColor
   );

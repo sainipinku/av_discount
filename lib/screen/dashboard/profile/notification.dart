@@ -101,9 +101,9 @@ Future<List<NotificationData>> fetchData() async {
   await Future.delayed(const Duration(seconds: 0)); // delay
 
   return [
-    NotificationData(msg: 'Apple stocks just increased Check it out now.', time: '15min ago',image: 'assets/images/notification.png'),
-    NotificationData(msg: 'Check out today’s best inves-tor. You’ll learn from him', time: '3min ago',image: 'assets/images/notification.png'),
-    NotificationData(msg: 'Where do you see yourself in the next ages.', time: '30secs ago',image: 'assets/images/notification.png'),
+    NotificationData(msg: 'Apple stocks just increased Check it out now.', time: '15min ago',image: 'assets/images/notiimage.png'),
+    NotificationData(msg: 'Check out today’s best inves-tor. You’ll learn from him', time: '3min ago',image: 'assets/images/notiimage.png'),
+    NotificationData(msg: 'Where do you see yourself in the next ages.', time: '30secs ago',image: 'assets/images/notiimage.png'),
   ];
 }
 

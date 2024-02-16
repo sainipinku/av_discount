@@ -72,7 +72,7 @@ class _SignInState extends State<SignIn> {
                         const SizedBox(width: 5,),
                         GestureDetector(
                             onTap: (){
-                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SignUp(),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUp(),));
                             },
                             child: Container(
                               padding: const EdgeInsets.symmetric(vertical: 10),
