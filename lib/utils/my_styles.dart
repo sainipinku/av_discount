@@ -316,12 +316,17 @@ class MyStyles {
   );
 
   ///Red
+  ///
   static TextStyle red14RegularStyle =  GoogleFonts.poppins(
       fontWeight: MyFontWeight.bold,
       fontSize:  14,
       color: MyAppTheme.redColor
   );
 
+  static TextStyle red34BoldStyle =  GoogleFonts.dmSans(
+      fontWeight: MyFontWeight.bold,
+      fontSize: 34,
+      color: MyAppTheme.redBigTxtColor);
   static TextStyle red16BoldQuicksandStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.bold,
       fontSize:  16,
@@ -405,6 +410,8 @@ class MyStyles {
       fontSize: 10,
       letterSpacing: .8,
       color: MyAppTheme.whiteColor);
+
+
 
 
 
