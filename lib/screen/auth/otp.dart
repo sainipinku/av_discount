@@ -1,4 +1,5 @@
 import 'package:av_discount_app/screen/auth/signin.dart';
+import 'package:av_discount_app/screen/vendors/vendor_dashboard.dart';
 import 'package:av_discount_app/utils/helpers/textfields.dart';
 import 'package:av_discount_app/utils/my_app_theme.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,8 @@ import '../dashboard/dashboard.dart';
 
 
 class Otp extends StatefulWidget {
-  const Otp({super.key});
+  int type;
+  Otp({super.key,required this.type});
 
   @override
   State<Otp> createState() => _OtpState();
@@ -65,7 +67,11 @@ class _OtpState extends State<Otp> {
                   mainBtn(
                       text: 'Verify',
                       onTap: (){
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DashBoard(inndex: 0,),));
+                        if(widget.type ==1) {
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DashBoard(inndex: 0,),));
+                        } else{
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => VendorDashBoard(index: 0,),));
+                        }
                       }, enble: 'txt'),
                   const SizedBox(
                     height: 30,
@@ -75,7 +81,7 @@ class _OtpState extends State<Otp> {
                     text: TextSpan(
                       style: MyStyles.grey15RegularPoppingStyle,
                       children: <TextSpan>[
-                        TextSpan(text: 'Didn’t receive a verification code?\n',),
+                        const TextSpan(text: 'Didn’t receive a verification code?\n',),
                         TextSpan(
                             text: 'Send Otp ',
                             style: MyStyles.red14RegularStyle),

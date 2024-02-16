@@ -1,3 +1,4 @@
+import 'package:av_discount_app/main.dart';
 import 'package:av_discount_app/screen/dashboard/vendors/vendor_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -187,7 +188,8 @@ storePreviewContainer({
 }
 
 priceContainer({
-  required String price
+  required String price,
+  String? type
 }){
   return InkWell(
     onTap: (){
@@ -197,7 +199,7 @@ priceContainer({
       padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 4),
       margin: const EdgeInsets.symmetric(horizontal: 8,),
       decoration: BoxDecoration(
-          color: MyAppTheme.blueTextClr,
+          color: (type == null) ? MyAppTheme.blueTextClr : MyAppTheme.redLightColor,
           borderRadius: BorderRadius.circular(12)
       ),
       child: Row(

@@ -18,6 +18,7 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  int selectedOption = 1;
   TextEditingController phoneController = TextEditingController();
 
   @override
@@ -61,9 +62,47 @@ class _SignInState extends State<SignIn> {
                   children: [
                     phoneTextField(
                         controller: phoneController),
+
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 1,
+                              child: ListTile(
+                                title: const Text('User'),
+                                leading: Radio(
+                                  value: 1,
+                                  groupValue: selectedOption,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      selectedOption = value!;
+                                    });
+                                  },
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: ListTile(
+                                title: const Text('Vendor'),
+                                leading: Radio(
+                                  value: 2,
+                                  groupValue: selectedOption,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      selectedOption = value!;
+                                    });
+                                  },
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+
+
+
                     mainBtn(text: 'Send OTP',
                         onTap: (){
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Otp(),));
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Otp(type: selectedOption),));
                         }, enble: phoneController.text),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -88,7 +127,6 @@ class _SignInState extends State<SignIn> {
                 ),
               ),
             ),
-
           ],
         )
         ,

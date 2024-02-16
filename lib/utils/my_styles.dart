@@ -291,6 +291,11 @@ class MyStyles {
       fontSize: 12,
       color: MyAppTheme.blackTextColor);
 
+  static TextStyle blackLight13boldCMStyle =  GoogleFonts.catamaran(
+      fontWeight: MyFontWeight.bold,
+      fontSize: 13,
+      color: MyAppTheme.blackTextColor);
+
   static TextStyle black17LightSFPtoDisplayStyle =  TextStyle(
       fontFamily: "SFProDisplay",
       fontWeight: MyFontWeight.light,

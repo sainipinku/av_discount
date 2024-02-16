@@ -48,6 +48,8 @@ dependencies:
   pinput: ^3.0.1
   google_fonts: ^6.1.0
   google_maps_flutter: ^2.5.3
+  fl_chart: ^0.66.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
