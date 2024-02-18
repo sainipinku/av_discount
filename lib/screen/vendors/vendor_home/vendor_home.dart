@@ -87,6 +87,11 @@ class _VendorHomeState extends State<VendorHome> {
                 ),
 
                 Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
+                    color: MyAppTheme.whiteColor,
+                  ),
+                  padding: const EdgeInsets.all(6),
                   margin: const EdgeInsets.only(top: 20),
                   height: height*.3,
                   // color: Colors.black,

@@ -30,67 +30,70 @@ class _VendorInvoiceState extends State<VendorInvoice> {
       resizeToAvoidBottomInset: true,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children:
-          [
-            Text('Invoice',style: MyStyles.red34BoldStyle,),
-            Container(
-              width: width,
-              height: 50,
-              padding: EdgeInsets.only(left: 15.0,right: 10.0),
-              decoration: BoxDecoration(
-                color: MyAppTheme.lightGreenColors,
-                borderRadius: BorderRadius.all(Radius.circular(30.0))
-              ),
-              child: TextField(
-                    controller: searchController,
-                decoration: new InputDecoration(
-                  icon: new Icon(Icons.search),
-                  border: InputBorder.none,
-                  hintText : "Enter User Details....",
-              ),
-            )),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: 5,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: const EdgeInsets.symmetric(vertical: 4),
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(
-                        color: Colors.black54,
-                        width: 1,
-                      ),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.65,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Poojara Fashions',style: MyStyles.black14BoldPoppingStyle,),
-                            Text('ID: GHFI4684JH82d',style: MyStyles.blackLight14LightPoppingStyle,),
-                            Text('09:15 AM, 14 Jan 2023',style: MyStyles.blackLight14LightPoppingStyle,),
-                          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children:
+            [
+              Text('Invoice',style: MyStyles.red34BoldStyle,),
+              Container(
+                width: width,
+                height: 50,
+                padding: const EdgeInsets.only(left: 15.0,right: 10.0),
+                decoration: BoxDecoration(
+                  color: MyAppTheme.lightGreenColors,
+                  borderRadius: const BorderRadius.all(Radius.circular(30.0))
+                ),
+                child: TextField(
+                      controller: searchController,
+                  decoration: const InputDecoration(
+                    icon: Icon(Icons.search),
+                    border: InputBorder.none,
+                    hintText : "Enter User Details....",
+                ),
+              )),
+              ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return Container(
+                    margin: const EdgeInsets.symmetric(vertical: 4),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: Colors.black54,
+                          width: 1,
                         ),
                       ),
-                      Expanded(
-                          child: Container(
-                            alignment: Alignment.center,
-                            child: Text('₹ 1825.50',style: MyStyles.green14BoldStyle),)
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
-          ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.65,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Poojara Fashions',style: MyStyles.black14BoldPoppingStyle,),
+                              Text('ID: GHFI4684JH82d',style: MyStyles.blackLight14LightPoppingStyle,),
+                              Text('09:15 AM, 14 Jan 2023',style: MyStyles.blackLight14LightPoppingStyle,),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text('₹ 1825.50',style: MyStyles.green14BoldStyle),)
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(

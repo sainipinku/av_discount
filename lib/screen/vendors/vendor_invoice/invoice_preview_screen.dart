@@ -13,7 +13,7 @@ class InvoicePreviewScreen extends StatefulWidget {
 }
 
 class _InvoicePreviewScreenState extends State<InvoicePreviewScreen> {
-  int selectedIndex = 3;
+  int selectedIndex = 2;
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   void _onItemTapped(int index) {
     setState(() {
@@ -188,8 +188,6 @@ class _InvoicePreviewScreenState extends State<InvoicePreviewScreen> {
                             children: [
                               Text('Subtotal',style: TextStyle(fontSize: 12,fontWeight: FontWeight.w700,color: Colors.black),),
                               Text('₹ 340',style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400,color: Colors.black),),
-
-
                             ],),
                           const SizedBox(height: 10,),
                           Container(
@@ -231,96 +229,96 @@ class _InvoicePreviewScreenState extends State<InvoicePreviewScreen> {
           ),
         ),
         bottomNavigationBar:BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: selectedIndex == 0 ? SvgPicture.asset(
-              'assets/icons/home.svg',
-              allowDrawingOutsideViewBox: true,
-              height: 20,
-              width: 20,
-              color: MyAppTheme.selecttxt,
-            ): SvgPicture.asset(
-              'assets/icons/home.svg',
-              allowDrawingOutsideViewBox: true,
-              height: 20,
-              width: 20,
-              color: Colors.white,
+          items: [
+            BottomNavigationBarItem(
+              icon: selectedIndex == 0 ? SvgPicture.asset(
+                'assets/icons/home.svg',
+                allowDrawingOutsideViewBox: true,
+                height: 20,
+                width: 20,
+                color: MyAppTheme.selecttxt,
+              ): SvgPicture.asset(
+                'assets/icons/home.svg',
+                allowDrawingOutsideViewBox: true,
+                height: 20,
+                width: 20,
+                color: Colors.white,
+              ),
+              label: 'Home',
             ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: selectedIndex == 1
-                ?  SvgPicture.asset(
-              'assets/icons/profile.svg',
-              allowDrawingOutsideViewBox: true,
-              height: 20,
-              width: 20,
-              color: MyAppTheme.selecttxt,
-            ) : SvgPicture.asset(
-              'assets/icons/profile.svg',
-              allowDrawingOutsideViewBox: true,
-              height: 20,
-              width: 20,
-              color: Colors.white,
+            BottomNavigationBarItem(
+              icon: selectedIndex == 1
+                  ?  SvgPicture.asset(
+                'assets/icons/profile.svg',
+                allowDrawingOutsideViewBox: true,
+                height: 20,
+                width: 20,
+                color: MyAppTheme.selecttxt,
+              ) : SvgPicture.asset(
+                'assets/icons/profile.svg',
+                allowDrawingOutsideViewBox: true,
+                height: 20,
+                width: 20,
+                color: Colors.white,
+              ),
+              label: 'Users',
             ),
-            label: 'Venders',
-          ),
-          BottomNavigationBarItem(
-            icon: selectedIndex == 2
-                ?  SvgPicture.asset(
-              'assets/icons/invoice.svg',
-              allowDrawingOutsideViewBox: true,
-              height: 20,
-              width: 20,
-              color: MyAppTheme.selecttxt,
-            ): SvgPicture.asset(
-              'assets/icons/invoice.svg',
-              allowDrawingOutsideViewBox: true,
-              height: 20,
-              width: 20,
-              color: Colors.white,
+            BottomNavigationBarItem(
+              icon: selectedIndex == 2
+                  ?  SvgPicture.asset(
+                'assets/icons/invoice.svg',
+                allowDrawingOutsideViewBox: true,
+                height: 20,
+                width: 20,
+                color: MyAppTheme.selecttxt,
+              ): SvgPicture.asset(
+                'assets/icons/invoice.svg',
+                allowDrawingOutsideViewBox: true,
+                height: 20,
+                width: 20,
+                color: Colors.white,
+              ),
+              label: 'Invoice',
             ),
-            label: 'Invoice',
-          ),
-          BottomNavigationBarItem(
-            icon: selectedIndex == 3
-                ?  SvgPicture.asset(
-              'assets/icons/profile.svg',
-              allowDrawingOutsideViewBox: true,
-              height: 20,
-              width: 20,
-              color: MyAppTheme.selecttxt,
-            ): SvgPicture.asset(
-              'assets/icons/profile.svg',
-              allowDrawingOutsideViewBox: true,
-              height: 20,
-              width: 20,
-              color: Colors.white,
+            BottomNavigationBarItem(
+              icon: selectedIndex == 3
+                  ?  SvgPicture.asset(
+                'assets/icons/profile.svg',
+                allowDrawingOutsideViewBox: true,
+                height: 20,
+                width: 20,
+                color: MyAppTheme.selecttxt,
+              ): SvgPicture.asset(
+                'assets/icons/profile.svg',
+                allowDrawingOutsideViewBox: true,
+                height: 20,
+                width: 20,
+                color: Colors.white,
+              ),
+              label: 'Profile',
             ),
-            label: 'Profile',
-          ),
 
 
-        ],
-        currentIndex: selectedIndex,
-        backgroundColor: MyAppTheme.btnColor,
-        selectedLabelStyle:  GoogleFonts.catamaran(
-          fontWeight: FontWeight.w500,
-          height: 1.5,
-          fontSize: 13,
-          color: MyAppTheme.selecttxt,
+          ],
+          currentIndex: selectedIndex,
+          backgroundColor: MyAppTheme.redLightColor,
+          selectedLabelStyle:  GoogleFonts.catamaran(
+            fontWeight: FontWeight.w500,
+            height: 1.5,
+            fontSize: 13,
+            color: MyAppTheme.selecttxt,
+          ),
+          type: BottomNavigationBarType.fixed,
+          unselectedLabelStyle: GoogleFonts.catamaran(
+            fontWeight: FontWeight.w500,
+            height: 1.5,
+            fontSize: 12,
+            color: Colors.white,
+          ),
+          selectedItemColor: MyAppTheme.selecttxt,
+          unselectedItemColor: Colors.white,
+          onTap: _onItemTapped,
         ),
-        type: BottomNavigationBarType.fixed,
-        unselectedLabelStyle: GoogleFonts.catamaran(
-          fontWeight: FontWeight.w500,
-          height: 1.5,
-          fontSize: 12,
-          color: Colors.white,
-        ),
-        selectedItemColor: MyAppTheme.selecttxt,
-        unselectedItemColor: Colors.white,
-        onTap: _onItemTapped,
-      ),
     );
   }
 }

@@ -5,7 +5,8 @@ import 'package:av_discount_app/screen/dashboard/invoice/invoice.dart';
 import 'package:av_discount_app/screen/dashboard/profile/contact_info.dart';
 import 'package:av_discount_app/screen/dashboard/profile/notification.dart';
 import 'package:av_discount_app/screen/vendors/profile/transaction_history.dart';
-import 'package:av_discount_app/screen/vendors/profile/wallet.dart';
+import 'package:av_discount_app/screen/vendors/profile/vendor_contact_info.dart';
+import 'package:av_discount_app/screen/vendors/profile/vendor_wallet.dart';
 
 import 'package:av_discount_app/utils/my_app_theme.dart';
 import 'package:av_discount_app/utils/my_styles.dart';
@@ -13,14 +14,14 @@ import 'package:av_discount_app/utils/ui_helper.dart';
 import 'package:flutter/material.dart';
 
 
-class Profile extends StatefulWidget {
-  const Profile({Key? key}) : super(key: key);
+class VendorProfile extends StatefulWidget {
+  const VendorProfile({Key? key}) : super(key: key);
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<VendorProfile> createState() => _VendorProfileState();
 }
 
-class _ProfileState extends State<Profile> {
+class _VendorProfileState extends State<VendorProfile> {
   final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
   @override
   Widget build(BuildContext context) {
@@ -59,12 +60,12 @@ class _ProfileState extends State<Profile> {
             const SizedBox(height: 20,),
 
             CustomImageRectangle(icon: "assets/images/contact_us.png", text: "Contact Info",onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInfo(),));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => VendorContactInfo(),));
             }, color: MyAppTheme.firstcolors,),
             CustomImageRectangle(
                color: MyAppTheme.secondcolors,
                 onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => WalletScreen(),));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => VendorWalletScreen(),));
             },icon: "assets/images/wallet.png", text: "Wallet"),
             CustomImageRectangle(
               color: MyAppTheme.thirdcolors,

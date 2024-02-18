@@ -68,12 +68,12 @@ class _WalletWidgetState extends State<WalletWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('Balance',style: MyStyles.black14MediumPoppingStyle,),
-                        Text('₹ 19,453',style: MyStyles.red16BoldStyle,),
+                        Text('₹ 19,453',style: MyStyles.red24mediumStyle,),
                       ],
                     ),
                     Container(
 
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Colors.black,
                         borderRadius: BorderRadius.all(Radius.circular(10.0))
                       ),

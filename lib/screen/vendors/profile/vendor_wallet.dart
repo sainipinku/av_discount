@@ -6,14 +6,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
-class WalletScreen extends StatefulWidget {
-  WalletScreen({super.key});
+class VendorWalletScreen extends StatefulWidget {
+  VendorWalletScreen({super.key});
 
   @override
-  State<WalletScreen> createState() => _WalletScreenState();
+  State<VendorWalletScreen> createState() => _VendorWalletScreenState();
 }
 
-class _WalletScreenState extends State<WalletScreen> {
+class _VendorWalletScreenState extends State<VendorWalletScreen> {
   int selectedIndex = 3;
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   void _onItemTapped(int index) {

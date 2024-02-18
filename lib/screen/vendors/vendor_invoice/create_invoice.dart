@@ -27,7 +27,7 @@ class _CreateInvoiceState extends State<CreateInvoice> {
   TextEditingController amountController = TextEditingController();
   TextEditingController discountController = TextEditingController();
   TextEditingController dateController = TextEditingController();
-  int selectedIndex = 3;
+  int selectedIndex = 2;
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   void _onItemTapped(int index) {
     setState(() {
@@ -131,7 +131,7 @@ class _CreateInvoiceState extends State<CreateInvoice> {
               width: 20,
               color: Colors.white,
             ),
-            label: 'Venders',
+            label: 'Users',
           ),
           BottomNavigationBarItem(
             icon: selectedIndex == 2
@@ -171,7 +171,7 @@ class _CreateInvoiceState extends State<CreateInvoice> {
 
         ],
         currentIndex: selectedIndex,
-        backgroundColor: MyAppTheme.btnColor,
+        backgroundColor: MyAppTheme.redLightColor,
         selectedLabelStyle:  GoogleFonts.catamaran(
           fontWeight: FontWeight.w500,
           height: 1.5,

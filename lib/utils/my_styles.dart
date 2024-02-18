@@ -328,6 +328,11 @@ class MyStyles {
       fontWeight: MyFontWeight.bold,
       fontSize: 34,
       color: MyAppTheme.redBigTxtColor);
+
+  static TextStyle red24mediumStyle =  GoogleFonts.dmSans(
+      fontWeight: MyFontWeight.medium,
+      fontSize: 24,
+      color: MyAppTheme.redBigTxtColor);
   static TextStyle red16BoldQuicksandStyle =  GoogleFonts.quicksand(
       fontWeight: MyFontWeight.boldd,
       fontSize:  16,
