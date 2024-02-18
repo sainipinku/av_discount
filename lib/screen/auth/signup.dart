@@ -59,7 +59,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                     SizedBox(height: 90,),
                     mainBtn(text: 'Register',
-                        onTap: (){}, enble: 'txt'),
+                        onTap: (){}, enble: 'txt', clr:MyAppTheme.btnColor),
                     SizedBox(height: 20,),
                     RichText(
                       textAlign: TextAlign.center,

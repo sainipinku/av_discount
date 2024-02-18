@@ -1,15 +1,9 @@
-import 'package:av_discount_app/common_ui/globle_ui.dart';
-import 'package:av_discount_app/screen/dashboard/home/home.dart';
-import 'package:av_discount_app/screen/dashboard/invoice/invoice.dart';
-import 'package:av_discount_app/screen/dashboard/profile/wallet_widget.dart';
-import 'package:av_discount_app/screen/dashboard/vendors/vendors_screen.dart';
+
+import 'package:av_discount_app/screen/vendors/profile/wallet_widget.dart';
 import 'package:av_discount_app/utils/my_app_theme.dart';
-import 'package:av_discount_app/utils/ui_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../../utils/my_styles.dart';
 
 
 class WalletScreen extends StatefulWidget {

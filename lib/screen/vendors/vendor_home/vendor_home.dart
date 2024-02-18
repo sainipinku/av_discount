@@ -44,7 +44,7 @@ class _VendorHomeState extends State<VendorHome> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                black34Text("Welcome, Jessie"),
+                black34Text("Poojara Fashions"),
                 const SizedBox(height: 25,),
                 Row(
                   children: [
@@ -87,9 +87,9 @@ class _VendorHomeState extends State<VendorHome> {
                 ),
 
                 Container(
-                  margin: EdgeInsets.only(top: 10),
+                  margin: const EdgeInsets.only(top: 20),
                   height: height*.3,
-                  color: Colors.black,
+                  // color: Colors.black,
                   child: MyChart(isShowingMainData: true,),
                 )
 

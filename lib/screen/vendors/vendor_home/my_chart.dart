@@ -130,8 +130,8 @@ class MyChart extends StatelessWidget {
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
     const style = TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      fontSize: 14,
     );
     Widget text;
     switch (value.toInt()) {
@@ -144,9 +144,11 @@ class MyChart extends StatelessWidget {
       case 12:
         text = const Text('DEC', style: style);
         break;
+
       default:
         text = const Text('');
         break;
+
     }
 
     return SideTitleWidget(
@@ -179,7 +181,7 @@ class MyChart extends StatelessWidget {
   LineChartBarData get lineChartBarData1_1 => LineChartBarData(
     isCurved: true,
     color: Colors.green,
-    barWidth: 8,
+    barWidth: 2,
     isStrokeCapRound: true,
     dotData: const FlDotData(show: false),
     belowBarData: BarAreaData(show: false),
@@ -197,7 +199,7 @@ class MyChart extends StatelessWidget {
   LineChartBarData get lineChartBarData1_2 => LineChartBarData(
     isCurved: true,
     color: Colors.pinkAccent,
-    barWidth: 8,
+    barWidth: 2,
     isStrokeCapRound: true,
     dotData: const FlDotData(show: false),
     belowBarData: BarAreaData(
@@ -217,7 +219,7 @@ class MyChart extends StatelessWidget {
   LineChartBarData get lineChartBarData1_3 => LineChartBarData(
     isCurved: true,
     color: Colors.cyan,
-    barWidth: 8,
+    barWidth: 2,
     isStrokeCapRound: true,
     dotData: const FlDotData(show: false),
     belowBarData: BarAreaData(show: false),

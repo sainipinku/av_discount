@@ -9,6 +9,7 @@ class MyFontWeight {
   static FontWeight medium = FontWeight.w600;
   static FontWeight semiBold = FontWeight.bold;
   static FontWeight bold = FontWeight.w400;
+  static FontWeight boldd = FontWeight.w700;
   static FontWeight extraBold = FontWeight.w900;
 }
 
@@ -163,7 +164,7 @@ class MyStyles {
 
   static TextStyle lightBlack14RegularStyle =  TextStyle(
       fontWeight: MyFontWeight.regular,
-      fontSize: 14,
+      fontSize: 16,
       color: MyAppTheme.blackTextColor);
 
   static TextStyle lightBlack16RegularStyle =  TextStyle(
@@ -232,13 +233,13 @@ class MyStyles {
       color: MyAppTheme.blackColor);
 
   static TextStyle black28BoldPoppingStyle =  GoogleFonts.poppins(
-      fontWeight: MyFontWeight.bold,
+      fontWeight: MyFontWeight.boldd,
       fontSize: 28,
       color: MyAppTheme.blackColor);
 
   static TextStyle black24MediumPoppingStyle =  GoogleFonts.poppins(
       fontWeight: MyFontWeight.medium,
-      fontSize: 24,
+      fontSize: 18,
       color: MyAppTheme.blackColor);
 
   static TextStyle black22MediumStyle =  TextStyle(
@@ -264,7 +265,7 @@ class MyStyles {
       color: MyAppTheme.blackColor);
 
   static TextStyle black14BoldPoppingStyle =  GoogleFonts.poppins(
-      fontWeight: MyFontWeight.bold,
+      fontWeight: MyFontWeight.boldd,
       fontSize: 14,
       color: MyAppTheme.blackColor);
 
@@ -288,7 +289,7 @@ class MyStyles {
 
   static TextStyle black12LightCMStyle =  GoogleFonts.catamaran(
       fontWeight: MyFontWeight.light,
-      fontSize: 12,
+      fontSize: 14,
       color: MyAppTheme.blackTextColor);
 
   static TextStyle blackLight13boldCMStyle =  GoogleFonts.catamaran(
@@ -316,14 +317,19 @@ class MyStyles {
   );
 
   ///Red
+  ///
   static TextStyle red14RegularStyle =  GoogleFonts.poppins(
       fontWeight: MyFontWeight.light,
       fontSize:  14,
       color: MyAppTheme.redColor
   );
 
-  static TextStyle red16BoldQuicksandStyle =  GoogleFonts.quicksand(
+  static TextStyle red34BoldStyle =  GoogleFonts.dmSans(
       fontWeight: MyFontWeight.bold,
+      fontSize: 34,
+      color: MyAppTheme.redBigTxtColor);
+  static TextStyle red16BoldQuicksandStyle =  GoogleFonts.quicksand(
+      fontWeight: MyFontWeight.boldd,
       fontSize:  16,
       color: MyAppTheme.redTextColor);
 
@@ -392,7 +398,7 @@ class MyStyles {
 
   static TextStyle white24MediumStyle =  GoogleFonts.poppins(
       fontWeight: MyFontWeight.medium,
-      fontSize:  24,
+      fontSize:  18,
       color: MyAppTheme.whiteColor);
 
   static TextStyle white12BoldPoppingStyle =  GoogleFonts.poppins(
@@ -405,6 +411,8 @@ class MyStyles {
       fontSize: 10,
       letterSpacing: .8,
       color: MyAppTheme.whiteColor);
+
+  static TextStyle invoicetextcolor =  TextStyle(fontWeight: FontWeight.w500,fontSize: 12,color: MyAppTheme.txtColor);
 
 
 

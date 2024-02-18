@@ -63,6 +63,7 @@ mainBtn({
   required VoidCallback onTap,
   double? height,
   double? width,
+  required Color clr,
   Widget? icon,
 }) {
   return GestureDetector(
@@ -75,7 +76,7 @@ mainBtn({
       margin: const EdgeInsets.symmetric(vertical: 10),
       decoration : BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: enble.isNotEmpty ? MyAppTheme.btnColor : MyAppTheme.btnDisColor
+          color: enble.isNotEmpty ? clr : MyAppTheme.btnDisColor
       ),
       child: (icon != null) ?
       Row(

@@ -59,13 +59,21 @@ class MyAppTheme {
   static  Color whiteColor = const Color(0xFFFFFFFF);
   static  Color blackTextColor = const Color(0xFF333333);
   static  Color redColor = const Color(0xFFED0F0F);
+  static  Color redBigTxtColor = const Color(0xFFF31818);
   static  Color redLightColor = const Color(0xFFFD1755);
   static  Color redTextColor = const Color(0xFFFE555D);
   static  Color backgroundClr = const Color(0xFFF6F6F9);
   static  Color blueTextClr = const Color(0xFF007AB6);
   static  Color greenColor = const Color(0xFF31A05F);
   static  Color greyColor = const Color(0xFF454545);
+  static  Color txtColor = const Color(0xFF383838);
   static Color selecttxt =const Color(0xFF00F2F2);
+  static Color firstcolors =const Color(0xFFFFE2E6);
+  static Color secondcolors =const Color(0xFFF4FD97);
+  static Color thirdcolors =const Color(0xFFAAF7C5);
+  static Color forthcolors =const Color(0xFFFFE1A4);
+  static Color fivecolors =const Color(0xFFDCFCE7);
+    static Color lightGreenColors =const Color(0xFFAAF7C5);
 
 
 }

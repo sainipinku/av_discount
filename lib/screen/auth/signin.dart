@@ -102,8 +102,8 @@ class _SignInState extends State<SignIn> {
 
                     mainBtn(text: 'Send OTP',
                         onTap: (){
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Otp(type: selectedOption),));
-                        }, enble: phoneController.text),
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Otp(type: selectedOption),));
+                        }, enble: phoneController.text, clr:MyAppTheme.btnColor),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

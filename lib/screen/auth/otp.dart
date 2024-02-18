@@ -72,7 +72,7 @@ class _OtpState extends State<Otp> {
                         } else{
                           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => VendorDashBoard(index: 0,),));
                         }
-                      }, enble: 'txt'),
+                      }, enble: 'txt', clr:MyAppTheme.btnColor),
                   const SizedBox(
                     height: 30,
                   ),

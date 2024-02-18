@@ -217,7 +217,7 @@ Widget underLineTextField({
         suffixIcon: suffixIcon,
         suffix: suffix,
         label: Text(title ?? ""),
-        labelStyle: MyStyles.lightBlack12RegularStyle,
+        labelStyle: MyStyles.black12LightCMStyle,
         //contentPadding: const EdgeInsets.all(12),
         hintText : hintText ?? '',
         hintStyle: MyStyles.lightBlack14RegularStyle,

@@ -1,9 +1,8 @@
 
-import 'package:av_discount_app/screen/dashboard/invoice/invoice.dart';
-import 'package:av_discount_app/screen/dashboard/profile/profile.dart';
-import 'package:av_discount_app/screen/dashboard/vendors/vendor_profile.dart';
 import 'package:av_discount_app/screen/dashboard/vendors/vendors_screen.dart';
+import 'package:av_discount_app/screen/vendors/profile/profile.dart';
 import 'package:av_discount_app/screen/vendors/vendor_home/vendor_home.dart';
+import 'package:av_discount_app/screen/vendors/vendor_invoice/vendor_invoice.dart';
 import 'package:av_discount_app/utils/my_app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -23,7 +22,7 @@ class _VendorDashBoardState extends State<VendorDashBoard> {
   List<Widget> screens = [
     VendorHome(),
     Vendors(),
-    Invoice(),
+    VendorInvoice(),
     Profile(),
   ];
   @override

@@ -100,6 +100,9 @@ flutter:
         - asset: assets/fonts/DMSans/DMSans-SemiBold.ttf
           weight: 700
 
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins/Poppins-Bold.ttf
     - family: SFCompactDisplay
       fonts:
         - asset: assets/fonts/SFCompactDisplay/FontsFree-Net-SFCompactDisplay-Black.ttf
