@@ -206,7 +206,7 @@ priceContainer({
       child: Row(
         children: [
           Image.asset(
-            "assets/images/cart.png",
+            "assets/images/walletttt.png",
             height: 22,
             width: 22,
             color: Colors.white,

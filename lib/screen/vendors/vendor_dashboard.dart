@@ -1,6 +1,7 @@
 
 import 'package:av_discount_app/screen/dashboard/vendors/vendors_screen.dart';
 import 'package:av_discount_app/screen/vendors/profile/vendor_profile.dart';
+import 'package:av_discount_app/screen/vendors/users/users.dart';
 import 'package:av_discount_app/screen/vendors/vendor_home/vendor_home.dart';
 import 'package:av_discount_app/screen/vendors/vendor_invoice/vendor_invoice.dart';
 import 'package:av_discount_app/utils/my_app_theme.dart';
@@ -21,7 +22,7 @@ class _VendorDashBoardState extends State<VendorDashBoard> {
   int selectedIndex = 0;
   List<Widget> screens = [
     VendorHome(),
-    Vendors(),
+    Users(),
     VendorInvoice(),
     VendorProfile(),
   ];

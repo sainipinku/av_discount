@@ -50,7 +50,7 @@ class _VendorHomeState extends State<VendorHome> {
                   children: [
                     Expanded(flex: 1,child: homeContainer(
                         title: "All users",
-                      imgIcon: "assets/icons/person_outline.png",
+                      imgIcon: "assets/images/user_img.png",
                       circularContainerColor: MyAppTheme.redTextColor,
                       containerColor: const Color(0xFFFFE2E6),
                       price: "9876",
@@ -58,7 +58,7 @@ class _VendorHomeState extends State<VendorHome> {
                     const SizedBox(width: 25,),
                     Expanded(flex: 1,child: homeContainer(
                       title: "All Products",
-                      imgIcon: "assets/icons/products_ic.png",
+                      imgIcon: "assets/images/box.png",
                       circularContainerColor: const Color(0xFFFE947A),
                       containerColor: const Color(0xFFFFF4DE),
                       price: "986",
@@ -70,7 +70,7 @@ class _VendorHomeState extends State<VendorHome> {
                   children: [
                     Expanded(flex: 1,child: homeContainer(
                         title: "Total Discounts",
-                      imgIcon: "assets/icons/gift_box_ic.png",
+                      imgIcon: "assets/images/offer.png",
                       circularContainerColor: const Color(0xFF4BDB63),
                       containerColor: const  Color(0xFFDCFCE7),
                       price: "1300",
@@ -78,7 +78,7 @@ class _VendorHomeState extends State<VendorHome> {
                     const SizedBox(width: 25,),
                     Expanded(flex: 1,child: homeContainer(
                       title: "Total Invoice",
-                      imgIcon: "assets/icons/invoice_ic.png",
+                      imgIcon: "assets/images/invoice.png",
                       circularContainerColor: const Color(0xFFBF83FF),
                       containerColor: const Color(0xFFF4F8CA),
                       price: "105",
@@ -95,7 +95,44 @@ class _VendorHomeState extends State<VendorHome> {
                   margin: const EdgeInsets.only(top: 20),
                   height: height*.3,
                   // color: Colors.black,
-                  child: MyChart(isShowingMainData: true,),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                           Text('User Graph',style: MyStyles.black14BoldStyle,),
+                            Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 4),
+                                  margin: const EdgeInsets.symmetric(horizontal: 8,),
+                                  decoration: BoxDecoration(
+                                      color: MyAppTheme.redLightColor,
+                                      borderRadius: BorderRadius.circular(5)
+                                  ),
+                                  child: white14BoldText('1 Month'),
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 4),
+                                  margin: const EdgeInsets.symmetric(horizontal: 8,),
+                                  decoration: BoxDecoration(
+                                      color: MyAppTheme.blackColor,
+                                      borderRadius: BorderRadius.circular(5)
+                                  ),
+                                  child: white14BoldText('1 Year'),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      Expanded(child: MyChart(isShowingMainData: true,))
+
+                    ],
+                  ),
                 )
 
               ],
@@ -146,7 +183,9 @@ class _VendorHomeState extends State<VendorHome> {
                 shape: BoxShape.circle,
               ),
               child: Image(
-                image: AssetImage(imgIcon),
+                height: 25,
+                width: 25,
+                image: AssetImage(imgIcon,),
               ),
             ),
             const SizedBox(
