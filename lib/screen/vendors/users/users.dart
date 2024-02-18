@@ -52,7 +52,7 @@ class _UsersState extends State<Users> {
                           children: [
                             Text("Jonson Deo",style: MyStyles.black14BoldPoppingStyle,),
                             const SizedBox(height: 5,),
-                            Text("(+91 9988776655",style:  MyStyles.grey14lightPoppingStyle,),
+                            Text("+91 9988776655",style:  MyStyles.grey14lightPoppingStyle,),
                             const SizedBox(height: 5,),
                             Text("jonson@gmail.com",style:  MyStyles.grey14lightPoppingStyle,)
                           ],
@@ -60,7 +60,7 @@ class _UsersState extends State<Users> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            isNegative ? Text("2000",style: MyStyles.green14BoldStyle,) :
+                            isNegative ? Text("₹ 3000",style: MyStyles.green14BoldStyle,) :
                             Text("- 125.50",style: MyStyles.red14RegularStyle,) ,
                            // const SizedBox(height: 5,),
                             //Text("09:15 AM",style:  MyStyles.grey14lightPoppingStyle,)
