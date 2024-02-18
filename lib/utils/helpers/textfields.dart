@@ -207,7 +207,7 @@ Widget underLineTextField({
 }){
   return TextFormField(
     //enabled: (disabled== null)? true : !disabled,
-      style: MyStyles.lightBlack14BoldStyle,
+      style: MyStyles.black16boldPoppinsStyle,
       textCapitalization: TextCapitalization.words,
       controller: controller,
       keyboardType: textInputType ?? TextInputType.text,

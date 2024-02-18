@@ -13,6 +13,8 @@ import 'package:av_discount_app/utils/my_styles.dart';
 import 'package:av_discount_app/utils/ui_helper.dart';
 import 'package:flutter/material.dart';
 
+import '../vendor_dashboard.dart';
+
 
 class VendorProfile extends StatefulWidget {
   const VendorProfile({Key? key}) : super(key: key);
@@ -70,7 +72,7 @@ class _VendorProfileState extends State<VendorProfile> {
             CustomImageRectangle(
               color: MyAppTheme.thirdcolors,
               icon: "assets/images/invoice.png", text: "Invoice",onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => DashBoard(inndex: 2,),));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => VendorDashBoard(index: 2,),));
             },),
             CustomImageRectangle(
                 color: MyAppTheme.forthcolors,

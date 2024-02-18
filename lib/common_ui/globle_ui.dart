@@ -2,6 +2,8 @@ import 'package:av_discount_app/utils/my_app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../screen/vendors/message/msg_screen.dart';
+
 AppBar customAppBar(
     BuildContext context,
     GlobalKey<ScaffoldState> key,
@@ -28,7 +30,9 @@ AppBar customAppBar(
           children: [
             widget ?? const SizedBox.shrink(),
             GestureDetector(
-              onTap: () {}, // Image tapped
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SendMessage(),));
+              }, // Image tapped
               child: Container(
                 height: 27,
                 width: 25,

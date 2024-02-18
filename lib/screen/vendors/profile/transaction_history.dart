@@ -203,7 +203,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
 
         ],
         currentIndex: selectedIndex,
-        backgroundColor: MyAppTheme.btnColor,
+        backgroundColor: MyAppTheme.redLightColor,
         selectedLabelStyle:  GoogleFonts.catamaran(
           fontWeight: FontWeight.w500,
           height: 1.5,
